@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main className="bg-gradient-to-br from-black via-slate-900 to-black">
       <Header />
       <Hero />
       <About />

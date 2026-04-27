@@ -2,62 +2,54 @@
 
 import Image from 'next/image'
 
-const CREATOR_URL = 'https://perchance.org/mp86fexf39'
-
 export default function UNTImageCreator() {
-  const openCreator = () => {
-    window.open(CREATOR_URL, '_blank')
-  }
-
   return (
-    <section id="image-gen" className="bg-black border-b-4 border-black text-white">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-12 border-b-4 border-white pb-6">
+    <section id="create" className="py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-5xl font-black text-white mb-12 text-center">
           CREATE $UNT IMAGES
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Preview Image */}
-          <div className="flex justify-center">
-            <div className="border-4 border-white overflow-hidden max-w-sm">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051649_661-r2oJ5RTK3FSKw4kDGAWa1BUN3gpAvr.jpg"
-                alt="$UNT Image Creator Preview"
-                width={400}
-                height={400}
-                className="w-full"
-              />
-            </div>
+          <div className="rounded overflow-hidden">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051649_661-r2oJ5RTK3FSKw4kDGAWa1BUN3gpAvr.jpg"
+              alt="$UNT Creator"
+              width={400}
+              height={400}
+              className="w-full"
+            />
           </div>
 
-          {/* Creator Section */}
           <div className="space-y-6">
             <div>
-              <p className="text-2xl font-black mb-4">GENERATE UNLIMITED $UNT IMAGES</p>
-              <p className="text-lg font-bold mb-6">
-                Create custom $UNT in any scenario, outfit, or vibe. Powered by AI, unlimited generations, completely free.
+              <h3 className="text-3xl font-black text-white mb-4">
+                Generate Unlimited $UNT Images
+              </h3>
+              <p className="text-gray-300">
+                Create custom $UNT visuals in any scenario, outfit, or vibe. Powered by AI, completely free, unlimited generations.
               </p>
             </div>
 
             <button
-              onClick={openCreator}
-              className="w-full bg-white text-black px-8 py-6 font-black text-xl border-4 border-white hover:bg-gray-100 transition"
+              onClick={() => window.open('https://perchance.org/mp86fexf39', '_blank')}
+              className="w-full bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 font-black text-lg rounded transition"
             >
-              OPEN IMAGE CREATOR →
+              OPEN CREATOR →
             </button>
 
-            <div className="bg-white text-black p-6 border-4 border-white">
-              <p className="font-black text-sm mb-3">HOW TO CREATE</p>
-              <ul className="space-y-2 text-sm font-bold">
-                <li>• Describe your $UNT vision</li>
-                <li>• Customize style, outfit, setting</li>
-                <li>• Generate your unique image</li>
-                <li>• Share with the community</li>
+            <div className="bg-white/5 backdrop-blur border border-white/10 rounded p-6">
+              <p className="font-black text-white mb-3">HOW TO USE</p>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>• Describe your $UNT image</li>
+                <li>• Customize style and vibe</li>
+                <li>• Generate instantly</li>
+                <li>• Share with community</li>
               </ul>
             </div>
 
-            <p className="text-sm font-bold text-gray-300">
-              Opens in new tab • No login • Free & unlimited
+            <p className="text-xs text-gray-500">
+              Opens in new tab • No login required • Free
             </p>
           </div>
         </div>

@@ -2,7 +2,6 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const characterImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_045616_551-xDCMa6HTmXrgDG0GKmMC7bWlhKf2yE.jpg',
@@ -29,60 +28,42 @@ export default function MemeWall() {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainer.current) {
       const scrollAmount = 400
-      if (direction === 'left') {
-        scrollContainer.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
-      } else {
-        scrollContainer.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-      }
+      scrollContainer.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' })
     }
   }
 
   return (
-    <section id="memes" className="bg-white border-b-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-8 border-b-4 border-black pb-6">
-          $UNT MEME GALLERY
+    <section id="memes" className="py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-5xl font-black text-white mb-12 text-center">
+          MEME GALLERY
         </h2>
 
-        {/* Horizontal carousel container */}
         <div className="relative">
-          {/* Left button */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded transition"
           >
-            <ChevronLeft size={24} />
+            ←
           </button>
 
-          {/* Scrollable carousel */}
           <div
             ref={scrollContainer}
             className="flex gap-4 overflow-x-auto scroll-smooth px-16"
             style={{ scrollBehavior: 'smooth' }}
           >
             {characterImages.map((image, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-80 h-96 bg-black border-4 border-black overflow-hidden hover:scale-105 transition-transform cursor-pointer group"
-              >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100">
-                  <Image
-                    src={image}
-                    alt={`$UNT Meme ${index + 1}`}
-                    fill
-                    className="object-cover group-hover:opacity-80 transition-opacity"
-                  />
-                </div>
+              <div key={index} className="flex-shrink-0 w-80 h-96 rounded overflow-hidden hover:scale-105 transition">
+                <Image src={image} alt={`Meme ${index + 1}`} fill className="object-cover" />
               </div>
             ))}
           </div>
 
-          {/* Right button */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded transition"
           >
-            <ChevronRight size={24} />
+            →
           </button>
         </div>
       </div>

@@ -2,76 +2,75 @@
 
 export default function About() {
   return (
-    <section id="about" className="bg-black text-white border-b-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-12 border-b-4 border-white pb-6">
-          ABOUT $UNT
+    <section className="py-20 bg-black">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-5xl font-black text-white mb-16 text-center">
+          THE RELAUNCH
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white text-black p-8 border-4 border-white">
-            <h3 className="text-2xl font-black mb-4">THE VISION</h3>
-            <p className="font-bold leading-relaxed mb-4">
-              $UNT is a free idol representing independence, love, care, craziness, wealth, and fun. It&apos;s not just a token—it&apos;s a movement born from the trenches.
+        <div className="space-y-12">
+          {/* Last Launch Info */}
+          <div className="bg-white/5 backdrop-blur border border-white/10 rounded p-8">
+            <h3 className="text-2xl font-black text-pink-300 mb-4">Last Launch History</h3>
+            <p className="text-gray-300 mb-6">
+              We proved $UNT could hit $1M in market cap. We showed the world what was possible in 24 hours. Then the system tried to stop us.
             </p>
-            <p className="font-bold text-gray-600">
-              The potential to become a global icon evolving into merch, NFTs, and cultural movements.
-            </p>
-          </div>
-
-          <div className="bg-white text-black p-8 border-4 border-white">
-            <h3 className="text-2xl font-black mb-4">THE CULTURE</h3>
-            <p className="font-bold leading-relaxed mb-4">
-              We stay. We show up every day with new content, new energy, and new moves.
-            </p>
-            <p className="font-bold text-gray-600">
-              This is more than a token—this is the $UNT cult. All we need is support, because together, we will flip the tables.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white text-black p-8 border-4 border-white mb-8">
-          <h3 className="text-2xl font-black mb-6">LAUNCH HISTORY</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-black pl-6">
-              <p className="text-4xl font-black text-gray-400">$5K</p>
-              <p className="font-bold">Launch Price</p>
-              <p className="text-sm font-bold text-gray-600">Day 1 start</p>
-            </div>
-            <div className="border-l-4 border-black pl-6">
-              <p className="text-4xl font-black text-gray-400">$1M</p>
-              <p className="font-bold">Peak Achieved</p>
-              <p className="text-sm font-bold text-gray-600">5 minutes to bond, 10 min to $200K</p>
-            </div>
-            <div className="border-l-4 border-black pl-6">
-              <p className="text-4xl font-black text-gray-400">$200K+</p>
-              <p className="font-bold">Strong Floor</p>
-              <p className="text-sm font-bold text-gray-600">Community holding strong</p>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center">
+                <p className="text-pink-400 font-black text-2xl">5m</p>
+                <p className="text-xs text-gray-400">To Bond</p>
+              </div>
+              <div className="text-center">
+                <p className="text-pink-400 font-black text-2xl">10m</p>
+                <p className="text-xs text-gray-400">To $200K</p>
+              </div>
+              <div className="text-center">
+                <p className="text-pink-400 font-black text-2xl">24h</p>
+                <p className="text-xs text-gray-400">To $1M</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-white text-black p-8 border-4 border-white">
-          <h3 className="text-2xl font-black mb-6">THE RELAUNCH - STRONGER, SMARTER, BETTER</h3>
-          <div className="space-y-4 font-bold">
-            <p>
-              The last launch proved $UNT has real potential. We hit $1M in market cap. We built momentum. We built community.
-            </p>
-            <p>
-              Then the system tried to stop us. X banned us 7 times. Charts got nuked. Our runs got halted. But the community? Still here. Still strong. Still believing.
-            </p>
-            <div className="bg-black text-white p-6 border-2 border-black my-4">
-              <p className="font-black text-lg mb-2">WE DID IT ONCE. WE&apos;LL DO IT AGAIN.</p>
+          {/* The Suppression */}
+          <div className="bg-white/5 backdrop-blur border border-white/10 rounded p-8">
+            <h3 className="text-2xl font-black text-white mb-4">What Happened Next</h3>
+            <div className="space-y-4 text-gray-300">
               <p>
-                This relaunch is smarter. We&apos;ve learned from the pressure. We&apos;ve built stronger infrastructure. The cult is organized. The movement is real. 
+                <span className="text-pink-400 font-black">7 X suspensions.</span> We got banned and came back 7 times.
+              </p>
+              <p>
+                <span className="text-pink-400 font-black">Charts nuked.</span> CoinGecko, DexTools, every tracker went offline.
+              </p>
+              <p>
+                <span className="text-pink-400 font-black">Runs halted.</span> Just as momentum built, we hit walls.
+              </p>
+              <p className="pt-2 border-t border-white/10">
+                But you know what didn&apos;t get nuked? The community. Still here. Still holding. Still believing.
               </p>
             </div>
-            <p>
-              We sent this to a million before. The infrastructure was new, the coordination was rough. Now? We know what works. We know who&apos;s here. We know what we&apos;re building.
-            </p>
-            <p className="text-lg">
-              Same vision. Same energy. Better execution. Welcome back to $UNT.
-            </p>
+          </div>
+
+          {/* The Return */}
+          <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur border border-pink-500/30 rounded p-8">
+            <h3 className="text-2xl font-black text-white mb-4">Why We&apos;re Back Stronger</h3>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex gap-3">
+                <span className="text-pink-400 font-black">→</span>
+                We know what works now. No learning curve.
+              </li>
+              <li className="flex gap-3">
+                <span className="text-pink-400 font-black">→</span>
+                The community is organized. We&apos;ve built infrastructure.
+              </li>
+              <li className="flex gap-3">
+                <span className="text-pink-400 font-black">→</span>
+                This isn&apos;t hype anymore. This is a movement.
+              </li>
+              <li className="flex gap-3">
+                <span className="text-pink-400 font-black">→</span>
+                We did it once. We&apos;ll do it again—bigger.
+              </li>
+            </ul>
           </div>
         </div>
       </div>

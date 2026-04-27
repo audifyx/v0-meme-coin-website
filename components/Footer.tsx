@@ -1,48 +1,38 @@
-'use client'
-
-import { Twitter } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+    <footer className="bg-black border-t border-white/10 py-12">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-4xl font-black text-black mb-4">$UNT</h3>
-            <p className="font-bold text-black">
-              A global icon born from the trenches. The future is $UNT.
-            </p>
+            <p className="text-2xl font-black text-white mb-2">$UNT</p>
+            <p className="text-sm text-gray-400">The global icon. The community. The movement.</p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-xl font-black text-black mb-4">NAVIGATE</h4>
-            <ul className="space-y-2">
+            <p className="font-black text-white mb-4">NAVIGATION</p>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="#hero" className="font-bold text-black hover:underline">
-                  Home
+                <Link href="#story" className="hover:text-pink-400 transition">
+                  Story
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="font-bold text-black hover:underline">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#chart" className="font-bold text-black hover:underline">
+                <Link href="#chart" className="hover:text-pink-400 transition">
                   Chart
                 </Link>
               </li>
               <li>
-                <Link href="#image-gen" className="font-bold text-black hover:underline">
-                  Create
+                <Link href="#memes" className="hover:text-pink-400 transition">
+                  Memes
                 </Link>
               </li>
               <li>
-                <Link href="#memes" className="font-bold text-black hover:underline">
-                  Memes
+                <Link href="#create" className="hover:text-pink-400 transition">
+                  Create
                 </Link>
               </li>
             </ul>
@@ -50,40 +40,31 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-xl font-black text-black mb-4">COMMUNITY</h4>
-            <a
-              href="https://x.com/UNTuniverse"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-gray-800"
-            >
-              <Twitter size={20} />
-              <span>@UNTuniverse</span>
-            </a>
+            <p className="font-black text-white mb-4">COMMUNITY</p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="https://x.com/UNTuniverse" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-400 transition">
+                  X / Twitter
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/untcult" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-400 transition">
+                  Telegram
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t-4 border-black pt-8">
-          <p className="font-black text-black text-center md:text-left mb-4">
-            Contract: Coming Soon | Built for the $UNT Cult
+        {/* Bottom */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+          <p>© 2026 $UNT. All rights reserved.</p>
+          <p>
+            Built by{' '}
+            <a href="https://x.com/para1laxx" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition font-bold">
+              @para1laxx
+            </a>
           </p>
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="font-bold text-gray-600 mb-4 md:mb-0">
-              © 2026 $UNT. All rights reserved.
-            </p>
-            <p className="font-bold text-black">
-              Built by{' '}
-              <a
-                href="https://x.com/para1laxx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                @para1laxx
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </footer>
