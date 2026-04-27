@@ -94,9 +94,14 @@ export default function About() {
 
         {/* Launch History - Playful scattered layout */}
         <div className="mb-20 relative">
-          <h3 className="text-6xl md:text-7xl font-black mb-16 animate-fade-in-down transform -skew-x-2">
-            LAUNCH HISTORY
-          </h3>
+          <div className="mb-16 animate-fade-in-down transform -skew-x-2">
+            <h3 className="text-6xl md:text-7xl font-black leading-none">
+              LAUNCH
+            </h3>
+            <h3 className="text-6xl md:text-7xl font-black leading-none mt-2">
+              HISTORY
+            </h3>
+          </div>
           
           <div className="relative h-96 md:h-80">
             {/* $5K Card - top left, rotated */}
