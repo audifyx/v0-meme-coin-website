@@ -69,7 +69,7 @@ export default function Footer() {
             Contract: Coming Soon | Built for the $UNT Cult
           </p>
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="font-bold text-gray-600 mb-4 md:mb-0">
+            <p className="font-bold text-black mb-4 md:mb-0">
               © 2026 $UNT. All rights reserved.
             </p>
             <p className="font-bold text-black">
