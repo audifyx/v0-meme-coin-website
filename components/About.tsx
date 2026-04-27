@@ -92,16 +92,16 @@ export default function About() {
           </div>
         </div>
 
-        {/* Launch History - Playful scattered layout */}
-        <div className="mb-20 relative">
-          <h3 className="text-6xl md:text-7xl font-black mb-16 animate-fade-in-down transform -skew-x-2">
+        {/* Launch History - Playful grid layout */}
+        <div className="mb-20">
+          <h3 className="text-6xl md:text-7xl font-black mb-12 animate-fade-in-down transform -skew-x-2">
             LAUNCH HISTORY
           </h3>
           
-          <div className="relative h-96 md:h-80">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* $5K Card - top left, rotated */}
-            <div className="absolute top-0 left-0 w-full md:w-1/3 animate-fade-in-up transform md:-rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up transform md:-rotate-3 hover:rotate-0 smooth-transition">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-2 relative z-10">$5K</p>
                 <p className="font-black text-lg text-gray-300 relative z-10">Launch</p>
@@ -110,8 +110,8 @@ export default function About() {
             </div>
 
             {/* $1M Card - center, larger and raised */}
-            <div className="absolute top-0 left-1/3 w-full md:w-1/3 -translate-x-1/4 md:translate-x-0 animate-fade-in-up stagger-item-2 transform md:-translate-y-8 hover:translate-y-0 smooth-transition hover:z-20">
-              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up stagger-item-2 transform md:-translate-y-8 hover:translate-y-0 smooth-transition">
+              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute -inset-2 bg-black opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
                 <p className="text-7xl font-black mb-2 relative z-10">$1M</p>
                 <p className="font-black text-xl text-black relative z-10">PEAK</p>
@@ -120,8 +120,8 @@ export default function About() {
             </div>
 
             {/* $200K+ Card - bottom right, rotated */}
-            <div className="absolute top-40 right-0 w-full md:w-1/3 animate-fade-in-up stagger-item-3 transform md:rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up stagger-item-3 transform md:rotate-3 hover:rotate-0 smooth-transition">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-2 relative z-10">$200K+</p>
                 <p className="font-black text-lg text-gray-300 relative z-10">Floor</p>
