@@ -38,36 +38,34 @@ export default function MemeWall() {
   }
 
   return (
-    <section id="memes" className="bg-white border-b-8 border-black relative overflow-hidden">
-      {/* Diagonal sections */}
-      <div className="absolute top-0 left-0 w-full h-48 bg-black skew-y-3 z-0"></div>
-      <div className="absolute bottom-0 right-0 w-full h-40 bg-black -skew-y-2 z-0"></div>
+    <section id="memes" className="bg-white border-b-4 border-black relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+      </div>
 
-      <div className="max-w-full mx-auto px-0 py-0 relative z-10">
-        {/* Header */}
-        <div className="px-8 md:px-12 py-24 relative">
-          <div className="absolute -top-12 right-0 text-9xl font-black text-black opacity-[0.12] leading-none whitespace-nowrap">
-            MEMESMEMESMEMES
-          </div>
-          <h2 className="text-10xl md:text-11xl font-black text-black relative z-20">
-            MEME<br/>GALLERY
+      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+        <div className="mb-16">
+          <h2 className="text-6xl md:text-7xl font-black mb-4 animate-fade-in-down">
+            MEME GALLERY
           </h2>
+          <div className="h-2 w-24 bg-black animate-fade-in-up stagger-item-2"></div>
         </div>
 
-        {/* Carousel container */}
-        <div className="relative group px-0 py-0 overflow-hidden -mt-8">
-          {/* Left button - dramatic */}
+        {/* Horizontal carousel container */}
+        <div className="relative group">
+          {/* Left button */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-8 md:left-12 top-1/2 -translate-y-1/2 z-30 bg-black text-white p-5 md:p-6 border-6 border-black hover:bg-gray-900 smooth-transition hover-lift shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronLeft size={40} strokeWidth={3} />
+            <ChevronLeft size={28} />
           </button>
 
           {/* Scrollable carousel */}
           <div
             ref={scrollContainer}
-            className="flex gap-8 overflow-x-auto scroll-smooth px-32 py-8"
+            className="flex gap-6 overflow-x-auto scroll-smooth px-20"
             style={{ scrollBehavior: 'smooth' }}
           >
             {characterImages.map((image, index) => (
@@ -76,28 +74,26 @@ export default function MemeWall() {
                 className="flex-shrink-0 w-80 h-96 cursor-pointer group/card animate-fade-in-up hover-lift"
                 style={{ animationDelay: `${(index % 4) * 80}ms` }}
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100 border-8 border-black shadow-2xl group-hover/card:shadow-2xl smooth-transition">
+                <div className="relative w-full h-full overflow-hidden bg-gray-100 border-4 border-black shadow-light group-hover/card:shadow-heavy smooth-transition">
                   <Image
                     src={image}
                     alt={`$UNT Meme ${index + 1}`}
                     fill
-                    className="object-cover group-hover/card:scale-125 smooth-transition"
+                    className="object-cover group-hover/card:scale-110 smooth-transition"
                   />
-                  {/* Bold overlay on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-20 smooth-transition"></div>
+                  {/* Dark overlay on hover */}
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-10 smooth-transition"></div>
                 </div>
-                {/* Decorative box */}
-                <div className="absolute -bottom-4 -right-4 w-8 h-8 border-4 border-black bg-black group-hover/card:bg-white smooth-transition"></div>
               </div>
             ))}
           </div>
 
-          {/* Right button - dramatic */}
+          {/* Right button */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 z-30 bg-black text-white p-5 md:p-6 border-6 border-black hover:bg-gray-900 smooth-transition hover-lift shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronRight size={40} strokeWidth={3} />
+            <ChevronRight size={28} />
           </button>
         </div>
       </div>

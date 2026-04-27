@@ -35,86 +35,81 @@ export default function HowToBuy() {
   ]
 
   return (
-    <section className="bg-white border-b-8 border-black relative overflow-visible">
-      {/* Diagonal sections */}
-      <div className="absolute top-0 right-0 w-full h-40 bg-black -skew-y-2 z-0"></div>
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-black skew-y-3 z-0"></div>
+    <section className="bg-white border-b-4 border-black relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+      </div>
 
-      <div className="max-w-full mx-auto px-0 py-0 relative z-10">
-        {/* Header */}
-        <div className="px-8 md:px-12 py-24 relative">
-          <div className="absolute top-0 left-0 text-9xl font-black text-black opacity-[0.12] leading-none -mt-8">
-            BUY BUY BUY
-          </div>
-          <h2 className="text-10xl md:text-11xl font-black text-black mb-0 relative z-20">
-            HOW<br/>TO BUY
+      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-6xl md:text-7xl font-black text-black mb-4 animate-fade-in-down">
+            HOW TO BUY
           </h2>
+          <div className="h-2 w-24 bg-black mx-auto mb-8 animate-fade-in-up stagger-item-2"></div>
+          <p className="text-xl font-bold text-gray-700 max-w-2xl mx-auto animate-fade-in-up stagger-item-3">
+            Four simple steps to join the revolution
+          </p>
         </div>
 
-        {/* Steps grid - asymmetrical with overlaps */}
-        <div className="px-8 md:px-12 py-0 relative z-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 -mt-12">
-            {steps.map((step, idx) => {
-              const IconComponent = step.icon
-              return (
-                <div
-                  key={step.number}
-                  className="animate-fade-in-up hover-lift"
-                  style={{ 
-                    animationDelay: `${idx * 80}ms`,
-                    marginTop: idx % 2 === 1 ? '48px' : '0'
-                  }}
-                >
-                  <div className="relative bg-black border-8 border-black p-12 h-full shadow-2xl overflow-hidden group hover:border-white smooth-transition">
-                    {/* Step badge - large and bold */}
-                    <div className="absolute -top-8 -left-8 w-20 h-20 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-heavy z-30">
-                      <span className="text-black font-black text-4xl">{step.number}</span>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {steps.map((step, idx) => {
+            const IconComponent = step.icon
+            return (
+              <div
+                key={step.number}
+                className="group animate-fade-in-up hover-lift-subtle"
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                <div className="relative bg-white border-4 border-black p-10 h-full shadow-light hover:shadow-heavy smooth-transition overflow-hidden">
+                  {/* Background gradient on hover */}
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-[0.02] smooth-transition"></div>
 
-                    {/* Icon */}
-                    <div className="relative mb-8 mt-6">
-                      <IconComponent size={48} className="text-white" strokeWidth={1.5} />
-                    </div>
-
-                    {/* Content - white text on black */}
-                    <h3 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="font-bold text-gray-300 text-lg leading-relaxed">
-                      {step.description}
-                    </p>
-
-                    {/* Decorative corner */}
-                    <div className="absolute -bottom-6 -right-6 w-12 h-12 border-4 border-white bg-black"></div>
-
-                    {/* Arrow - large and dramatic */}
-                    {step.number !== 4 && (
-                      <div className="hidden lg:block absolute -right-8 top-1/2 -translate-y-1/2 text-white opacity-30 group-hover:opacity-100 group-hover:translate-x-2 smooth-transition z-40">
-                        <ArrowRight size={48} strokeWidth={1.5} />
-                      </div>
-                    )}
+                  {/* Step number badge */}
+                  <div className="absolute -top-8 -left-8 w-16 h-16 bg-black border-4 border-black rounded-full flex items-center justify-center shadow-heavy group-hover:scale-110 smooth-transition">
+                    <span className="text-white font-black text-3xl">{step.number}</span>
                   </div>
+
+                  {/* Icon container */}
+                  <div className="relative mb-6 mt-8">
+                    <div className="inline-block p-4 bg-black text-white group-hover:bg-gray-900 smooth-transition">
+                      <IconComponent size={36} strokeWidth={2.5} />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-black text-black mb-3 group-hover:text-gray-800 smooth-transition">
+                    {step.title}
+                  </h3>
+                  <p className="font-bold text-gray-700 text-base leading-relaxed">
+                    {step.description}
+                  </p>
+
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-0 h-1 bg-black w-0 group-hover:w-full smooth-transition origin-left"></div>
+
+                  {/* Arrow connector */}
+                  {step.number !== 4 && (
+                    <div className="hidden lg:flex absolute -right-10 top-1/2 -translate-y-1/2 text-black opacity-20 group-hover:opacity-100 smooth-transition">
+                      <ArrowRight size={32} strokeWidth={2} />
+                    </div>
+                  )}
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
 
-        {/* CTA Section */}
-        <div className="px-8 md:px-12 py-20 relative">
-          <div className="text-left animate-fade-in-up" style={{ animationDelay: '400ms' }}>
-            <a
-              href="https://raydium.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-block relative"
-            >
-              <div className="bg-black text-white px-20 py-8 font-black text-3xl border-8 border-black shadow-2xl hover:border-white smooth-transition hover-lift relative overflow-hidden">
-                <span className="relative z-10 uppercase tracking-wider">START BUYING NOW</span>
-                <div className="absolute inset-0 bg-gray-900 translate-y-full group-hover:translate-y-0 smooth-transition"></div>
-              </div>
-            </a>
-          </div>
+        <div className="text-center pt-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+          <a
+            href="https://raydium.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-black text-white px-16 py-6 font-black text-lg border-4 border-black inline-block shadow-heavy hover-lift-subtle overflow-hidden"
+          >
+            <span className="relative z-10">START BUYING NOW</span>
+            <div className="absolute inset-0 bg-gray-900 translate-y-full group-hover:translate-y-0 smooth-transition"></div>
+          </a>
         </div>
       </div>
     </section>

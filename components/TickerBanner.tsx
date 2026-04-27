@@ -9,7 +9,7 @@ export default function TickerBanner() {
   ]
 
   return (
-    <div className="bg-black text-white border-b-8 border-white overflow-hidden relative shadow-2xl">
+    <div className="bg-black text-white border-b-4 border-black overflow-hidden relative shadow-heavy">
       <style>{`
         @keyframes ticker-scroll {
           0% {
@@ -20,59 +20,45 @@ export default function TickerBanner() {
           }
         }
         
-        @keyframes ticker-pulse {
+        @keyframes ticker-glow {
           0%, 100% {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 
-                        0 0 40px rgba(255, 255, 255, 0.2);
-            letter-spacing: 0.12em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
           }
           50% {
-            text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 
-                        0 0 60px rgba(255, 255, 255, 0.4),
-                        0 0 80px rgba(255, 255, 255, 0.2);
-            letter-spacing: 0.14em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
           }
         }
         
         .ticker-content {
           display: flex;
-          animation: ticker-scroll 45s linear infinite;
+          animation: ticker-scroll 40s linear infinite;
           white-space: nowrap;
         }
         
         .ticker-item {
-          padding: 0 5rem;
-          font-size: 2.5rem;
+          padding: 0 4rem;
+          font-size: 1.75rem;
           font-weight: 900;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.1em;
           flex-shrink: 0;
           text-transform: uppercase;
-          animation: ticker-pulse 4s ease-in-out infinite;
+          animation: ticker-glow 3s ease-in-out infinite;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         
         .ticker-item:hover {
           animation-play-state: paused;
-          text-shadow: 0 0 50px rgba(255, 255, 255, 1), 
-                      0 0 100px rgba(255, 255, 255, 0.6);
-          letter-spacing: 0.18em;
-          transform: scale(1.05);
-        }
-        
-        .ticker-separator {
-          display: inline-block;
-          margin: 0 2rem;
-          font-size: 2rem;
-          opacity: 0.7;
+          text-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+          letter-spacing: 0.15em;
         }
       `}</style>
       
-      <div className="py-8 overflow-hidden backdrop-blur-sm bg-black border-t-4 border-white">
+      <div className="py-6 overflow-hidden backdrop-blur-sm">
         <div className="ticker-content">
           {[...messages, ...messages, ...messages].map((msg, idx) => (
             <div key={idx} className="ticker-item">
-              {msg} <span className="ticker-separator">★</span>
+              {msg}
             </div>
           ))}
         </div>
