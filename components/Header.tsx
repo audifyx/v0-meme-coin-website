@@ -69,7 +69,7 @@ export default function Header() {
               className="text-white/60 hover:text-white border border-white/20 hover:border-white/40 px-4 py-2 text-xs font-bold tracking-widest transition">
               DEX
             </a>
-            <a href="https://x.com/i/communities/2020491205914902586" target="_blank" rel="noopener noreferrer"
+            <a href="https://x.com/i/communities/2037521607527391725" target="_blank" rel="noopener noreferrer"
               className="bg-white text-black px-4 py-2 text-xs font-bold tracking-widest hover:bg-white/90 transition">
               COMMUNITY
             </a>

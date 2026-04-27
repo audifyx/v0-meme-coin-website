@@ -26,7 +26,7 @@ export default function Footer() {
             <p className="text-white/40 text-xs font-bold tracking-widest mb-6">COMMUNITY</p>
             <div className="space-y-3">
               <a href="https://x.com/UNTuniverse" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">X (Twitter)</a>
-              <a href="https://x.com/i/communities/2020491205914902586" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">Community</a>
+              <a href="https://x.com/i/communities/2037521607527391725" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">Community</a>
               <a href="https://dexscreener.com" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">Dexscreener</a>
             </div>
           </div>
