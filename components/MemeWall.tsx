@@ -38,18 +38,18 @@ export default function MemeWall() {
   }
 
   return (
-    <section id="memes" className="bg-white border-b-4 border-black relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
-      </div>
+    <section id="memes" className="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 border-b-4 border-black relative overflow-hidden">
+      {/* Floating playful shapes */}
+      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-pink-300 opacity-25 animate-float-bob"></div>
+      <div className="absolute bottom-10 right-10 w-40 h-40 rounded-3xl bg-purple-200 opacity-20 animate-float-bob" style={{ animationDelay: '0.8s' }}></div>
+      <div className="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-indigo-300 opacity-20 animate-float-bob" style={{ animationDelay: '1.4s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
         <div className="mb-16">
-          <h2 className="text-6xl md:text-7xl font-black mb-4 animate-fade-in-down">
-            MEME GALLERY
+          <h2 className="text-6xl md:text-7xl font-black mb-4 animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600">
+            MEME GALLERY 🎨
           </h2>
-          <div className="h-2 w-24 bg-black animate-fade-in-up stagger-item-2"></div>
+          <div className="h-3 w-24 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-fade-in-up stagger-item-2"></div>
         </div>
 
         {/* Horizontal carousel container */}
@@ -57,9 +57,9 @@ export default function MemeWall() {
           {/* Left button */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-pink-500 to-purple-500 text-white p-4 rounded-full border-4 border-white hover:scale-110 smooth-transition hover-lift-subtle shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={32} />
           </button>
 
           {/* Scrollable carousel */}
@@ -74,15 +74,15 @@ export default function MemeWall() {
                 className="flex-shrink-0 w-80 h-96 cursor-pointer group/card animate-fade-in-up hover-lift"
                 style={{ animationDelay: `${(index % 4) * 80}ms` }}
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100 border-4 border-black shadow-light group-hover/card:shadow-heavy smooth-transition">
+                <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl border-4 border-white shadow-lg group-hover/card:shadow-2xl smooth-transition">
                   <Image
                     src={image}
                     alt={`$UNT Meme ${index + 1}`}
                     fill
-                    className="object-cover group-hover/card:scale-110 smooth-transition"
+                    className="object-cover group-hover/card:scale-120 smooth-transition rounded-2xl"
                   />
-                  {/* Dark overlay on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-10 smooth-transition"></div>
+                  {/* Colorful overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover/card:opacity-100 smooth-transition rounded-2xl"></div>
                 </div>
               </div>
             ))}
@@ -91,9 +91,9 @@ export default function MemeWall() {
           {/* Right button */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-4 rounded-full border-4 border-white hover:scale-110 smooth-transition hover-lift-subtle shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={32} />
           </button>
         </div>
       </div>
