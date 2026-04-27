@@ -1,28 +1,29 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-white border-b-4 border-black">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="text-2xl font-black text-white">
+        <Link href="#" className="text-3xl font-black text-black">
           $UNT
         </Link>
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-8">
-          <Link href="#story" className="text-white font-bold hover:text-pink-400 transition">
+          <Link href="#story" className="text-black font-bold hover:underline transition">
             Story
           </Link>
-          <Link href="#chart" className="text-white font-bold hover:text-pink-400 transition">
+          <Link href="#chart" className="text-black font-bold hover:underline transition">
             Chart
           </Link>
-          <Link href="#memes" className="text-white font-bold hover:text-pink-400 transition">
+          <Link href="#memes" className="text-black font-bold hover:underline transition">
             Memes
           </Link>
-          <Link href="#create" className="text-white font-bold hover:text-pink-400 transition">
+          <Link href="#create" className="text-black font-bold hover:underline transition">
             Create
           </Link>
         </nav>
@@ -31,10 +32,22 @@ export default function Header() {
         <Link
           href="https://x.com/UNTuniverse"
           target="_blank"
-          className="text-white font-black px-6 py-2 border border-white/30 hover:border-pink-400 hover:text-pink-400 transition rounded"
+          className="text-black font-black px-6 py-2 border-2 border-black hover:bg-black hover:text-white transition"
         >
           Follow X
         </Link>
+      </div>
+
+      {/* Banner Image */}
+      <div className="w-full border-b-4 border-black overflow-hidden bg-black">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051720_699-i5AvbEGml8Ymn0cV22lJrmLzCz7kAm.jpg"
+          alt="$UNT Banner"
+          width={1200}
+          height={300}
+          className="w-full h-48 object-cover"
+          priority
+        />
       </div>
     </header>
   )
