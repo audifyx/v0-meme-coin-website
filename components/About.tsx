@@ -93,7 +93,7 @@ export default function About() {
         </div>
 
         {/* Launch History - Playful scattered layout */}
-        <div className="mb-20 relative">
+        <div className="mb-32 relative">
           <div className="mb-16 animate-fade-in-down transform -skew-x-2">
             <h3 className="text-6xl md:text-7xl font-black leading-none">
               LAUNCH
@@ -103,20 +103,20 @@ export default function About() {
             </h3>
           </div>
           
-          <div className="relative h-96 md:h-80">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {/* $5K Card - top left, rotated */}
-            <div className="absolute top-0 left-0 w-full md:w-1/3 animate-fade-in-up transform md:-rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up transform md:-rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-4 relative z-10">$5K</p>
                 <p className="font-black text-lg text-gray-300 relative z-10 whitespace-nowrap">Launch</p>
-                <p className="text-xs font-bold text-gray-400 relative z-10 mt-1">Day 1</p>
+                <p className="text-xs font-bold text-gray-400 relative z-10 mt-2">Day 1</p>
               </div>
             </div>
 
             {/* $1M Card - center, larger and raised */}
-            <div className="absolute top-0 left-1/3 w-full md:w-1/3 -translate-x-1/4 md:translate-x-0 animate-fade-in-up stagger-item-2 transform md:-translate-y-8 hover:translate-y-0 smooth-transition hover:z-20">
-              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up stagger-item-2 transform hover:z-20 md:scale-110">
+              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute -inset-2 bg-black opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
                 <p className="text-7xl font-black mb-2 relative z-10">$1M</p>
                 <p className="font-black text-xl text-black relative z-10">PEAK</p>
@@ -125,32 +125,32 @@ export default function About() {
             </div>
 
             {/* $200K+ Card - bottom right, rotated */}
-            <div className="absolute top-40 right-0 w-full md:w-1/3 animate-fade-in-up stagger-item-3 transform md:rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
+            <div className="animate-fade-in-up stagger-item-3 transform md:rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-2 relative z-10">$200K+</p>
                 <p className="font-black text-lg text-gray-300 relative z-10">Floor</p>
-                <p className="text-xs font-bold text-gray-400 relative z-10">Community Holding</p>
+                <p className="text-xs font-bold text-gray-400 relative z-10 mt-2">Community Holding</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* The Relaunch - Bold & Playful */}
-        <div className="relative animate-fade-in-up stagger-item-4">
-          <div className="space-y-6 relative z-10">
+        <div className="relative animate-fade-in-up stagger-item-4 mt-20 pt-20 border-t-4 border-white/20">
+          <div className="space-y-8 relative z-10">
             {/* Playful header */}
-            <div className="space-y-0">
-              <h3 className="text-7xl md:text-8xl font-black leading-none transform skew-y-2 mb-2">
+            <div className="space-y-2 mb-12">
+              <h3 className="text-7xl md:text-8xl font-black leading-tight transform skew-y-2">
                 THE
               </h3>
-              <h3 className="text-6xl md:text-7xl font-black leading-none transform -skew-y-3 text-white/70 whitespace-nowrap">
+              <h3 className="text-6xl md:text-7xl font-black leading-tight transform -skew-y-3 text-white/70 whitespace-nowrap">
                 RELAUNCH
               </h3>
             </div>
 
             {/* Narrative with playful highlights */}
-            <div className="space-y-8 pt-8">
+            <div className="space-y-8 pt-4">
               <div className="group relative">
                 <div className="absolute -inset-4 bg-white rounded-2xl opacity-0 group-hover:opacity-5 smooth-transition"></div>
                 <p className="text-xl md:text-2xl font-black leading-relaxed relative z-10 text-white/90">
