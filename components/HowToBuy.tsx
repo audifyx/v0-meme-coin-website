@@ -41,31 +41,31 @@ export default function HowToBuy() {
         <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-        {/* Playful header with skew */}
-        <div className="mb-24">
-          <div className="space-y-2 mb-8">
+      <div className="max-w-7xl mx-auto px-4 py-24 relative z-10">
+        {/* Playful header with skew - centered */}
+        <div className="mb-28 text-center">
+          <div className="space-y-2 mb-10 flex flex-col items-center justify-center">
             <h2 className="text-8xl md:text-9xl font-black text-black leading-tight transform -skew-y-3 animate-fade-in-down">
               HOW
             </h2>
-            <h2 className="text-7xl md:text-8xl font-black text-black/50 leading-tight transform skew-y-2 animate-fade-in-down ml-12">
+            <h2 className="text-7xl md:text-8xl font-black text-black/50 leading-tight transform skew-y-2 animate-fade-in-down">
               TO BUY
             </h2>
           </div>
-          <p className="text-2xl font-black text-black animate-fade-in-up stagger-item-3 ml-4">
+          <p className="text-2xl font-black text-black animate-fade-in-up stagger-item-3">
             4 Steps. Get Rich. 🚀
           </p>
         </div>
 
-        {/* Playful zigzag step layout */}
-        <div className="space-y-16 mb-24 relative">
+        {/* Playful zigzag step layout - centered */}
+        <div className="space-y-16 mb-24 relative flex flex-col items-center max-w-4xl mx-auto">
           {steps.map((step, idx) => {
             const IconComponent = step.icon
             const isEven = idx % 2 === 0
             return (
               <div
                 key={step.number}
-                className={`group animate-fade-in-up flex gap-6 md:gap-10 items-stretch transform ${isEven ? '' : 'md:flex-row-reverse'} ${isEven ? 'md:-rotate-1 hover:rotate-0' : 'md:rotate-2 hover:rotate-0'} smooth-transition`}
+                className={`group animate-fade-in-up flex gap-6 md:gap-10 items-stretch transform w-full ${isEven ? '' : 'md:flex-row-reverse'} ${isEven ? 'md:-rotate-1 hover:rotate-0' : 'md:rotate-2 hover:rotate-0'} smooth-transition`}
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 {/* Step number badge - bold circle */}
