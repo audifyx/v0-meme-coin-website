@@ -73,16 +73,7 @@ export default function Footer() {
               © 2026 $UNT. All rights reserved.
             </p>
             <p className="font-bold text-gray-700 text-sm">
-              Built by{' '}
-              <a
-                href="https://x.com/para1laxx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/creator text-black hover:text-gray-700 smooth-transition relative inline-block"
-              >
-                @para1laxx
-                <div className="absolute bottom-0 left-0 h-1 bg-black w-0 group-hover/creator:w-full smooth-transition origin-left"></div>
-              </a>
+              Built by Audifyx Studios
             </p>
           </div>
         </div>
