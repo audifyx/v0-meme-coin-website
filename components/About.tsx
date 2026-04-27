@@ -133,13 +133,13 @@ export default function About() {
 
         {/* The Relaunch - Bold & Playful */}
         <div className="relative animate-fade-in-up stagger-item-4">
-          <div className="space-y-6 relative z-10">
+          <div className="space-y-8 relative z-10">
             {/* Playful header */}
-            <div className="space-y-4">
-              <h3 className="text-7xl md:text-8xl font-black leading-tight transform skew-y-2">
+            <div>
+              <h3 className="text-6xl md:text-7xl font-black leading-tight mb-2">
                 THE
               </h3>
-              <h3 className="text-8xl md:text-9xl font-black leading-tight transform -skew-y-3 text-white/70">
+              <h3 className="text-7xl md:text-8xl font-black leading-tight text-white/70 text-balance">
                 RELAUNCH
               </h3>
             </div>
