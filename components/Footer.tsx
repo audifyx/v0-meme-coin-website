@@ -1,81 +1,39 @@
 'use client'
 
-import { Twitter } from 'lucide-react'
-import Link from 'next/link'
-
 export default function Footer() {
   return (
-    <footer className="bg-white border-t-4 border-black relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <div className="animate-fade-in-up group">
-            <h3 className="text-4xl font-black text-black mb-4 group-hover:scale-110 smooth-transition origin-left">
-              $UNT
-            </h3>
-            <p className="font-bold text-gray-700 text-lg leading-relaxed">
-              A global icon born from the trenches. The future is $UNT.
-            </p>
+    <footer className="bg-black border-t border-white/10 py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <h3 className="text-2xl font-black text-white mb-4">$UNT</h3>
+            <p className="text-white/40 text-sm leading-relaxed">A free idol representing independence, love, care, craziness, wealth, and fun.</p>
           </div>
-
-          {/* Links */}
-          <div className="animate-fade-in-up stagger-item-2">
-            <h4 className="text-2xl font-black text-black mb-6">NAVIGATE</h4>
-            <ul className="space-y-3">
+          <div>
+            <p className="text-white/40 text-xs font-bold tracking-widest mb-6">LINKS</p>
+            <div className="space-y-3">
               {[
-                { href: '#hero', label: 'Home' },
-                { href: '#about', label: 'About' },
-                { href: '#chart', label: 'Chart' },
-                { href: '#image-gen', label: 'Create' },
-                { href: '#memes', label: 'Memes' },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="group/link font-black text-black hover:text-gray-700 smooth-transition relative inline-block"
-                  >
-                    {item.label}
-                    <div className="absolute bottom-0 left-0 h-1 bg-black w-0 group-hover/link:w-full smooth-transition origin-left"></div>
-                  </Link>
-                </li>
+                { label: 'How to Buy', href: '#buy' },
+                { label: 'About', href: '#about' },
+                { label: 'Chart', href: '#chart' },
+                { label: 'Gallery', href: '#memes' },
+              ].map((l) => (
+                <a key={l.href} href={l.href} className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">{l.label}</a>
               ))}
-            </ul>
+            </div>
           </div>
-
-          {/* Social */}
-          <div className="animate-fade-in-up stagger-item-3">
-            <h4 className="text-2xl font-black text-black mb-6">COMMUNITY</h4>
-            <a
-              href="https://x.com/UNTuniverse"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/btn inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-black border-4 border-black rounded-2xl hover:shadow-lg smooth-transition hover-lift-subtle shadow-light relative overflow-hidden"
-            >
-              <Twitter size={22} className="group-hover/btn:rotate-12 smooth-transition" />
-              <span className="relative z-10">@UNTuniverse</span>
-              <div className="absolute inset-0 bg-gray-900 -translate-x-full group-hover/btn:translate-x-0 smooth-transition"></div>
-            </a>
+          <div>
+            <p className="text-white/40 text-xs font-bold tracking-widest mb-6">COMMUNITY</p>
+            <div className="space-y-3">
+              <a href="https://x.com/UNTuniverse" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">X (Twitter)</a>
+              <a href="https://x.com/i/communities/2020491205914902586" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">Community</a>
+              <a href="https://dexscreener.com" target="_blank" className="block text-white/50 hover:text-white text-sm font-bold tracking-wide transition">Dexscreener</a>
+            </div>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="border-t-4 border-black pt-12">
-          <p className="font-black text-black text-center md:text-left mb-6 text-sm uppercase tracking-widest">
-            Contract: Coming Soon | Built for the $UNT Cult
-          </p>
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="font-bold text-gray-700 mb-4 md:mb-0 text-sm">
-              © 2026 $UNT. All rights reserved.
-            </p>
-            <p className="font-bold text-gray-700 text-sm">
-              Built by Audifyx Studios
-            </p>
-          </div>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between gap-4">
+          <p className="text-white/20 text-xs">$UNT is a meme token. Not financial advice.</p>
+          <p className="text-white/20 text-xs">Built by Audifyx Studios</p>
         </div>
       </div>
     </footer>
