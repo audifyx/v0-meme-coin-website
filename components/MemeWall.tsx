@@ -39,7 +39,7 @@ export default function MemeWall() {
           MEME GALLERY
         </h2>
 
-        <div className="relative group">
+        <div className="relative">
           <button
             onClick={() => scroll('left')}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
@@ -49,20 +49,20 @@ export default function MemeWall() {
 
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 px-16"
-            style={{ scrollBehavior: 'smooth' }}
+            className="flex gap-4 overflow-x-auto scroll-smooth px-16"
+            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {characterImages.map((image, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 w-96 h-80 bg-black border-4 border-black overflow-hidden hover:scale-105 transition cursor-pointer"
+                className="flex-shrink-0 w-80 h-96 bg-black border-4 border-black overflow-hidden hover:scale-105 transition cursor-pointer"
               >
                 <Image 
                   src={image} 
                   alt={`$UNT Meme ${index + 1}`} 
-                  fill 
-                  className="object-cover"
-                  sizes="384px"
+                  width={320}
+                  height={384}
+                  className="object-cover w-full h-full"
                 />
               </div>
             ))}
