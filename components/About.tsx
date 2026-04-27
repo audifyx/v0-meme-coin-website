@@ -98,10 +98,10 @@ export default function About() {
             LAUNCH HISTORY
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* $5K Card - top left, rotated */}
-            <div className="animate-fade-in-up transform md:-rotate-3 hover:rotate-0 smooth-transition">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
+          <div className="space-y-6 md:space-y-0 relative">
+            {/* $5K Card - up position */}
+            <div className="animate-fade-in-up transform md:-translate-y-16 md:-rotate-3 hover:rotate-0 smooth-transition md:max-w-xs">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-2 relative z-10">$5K</p>
                 <p className="font-black text-lg text-gray-300 relative z-10">Launch</p>
@@ -109,9 +109,9 @@ export default function About() {
               </div>
             </div>
 
-            {/* $1M Card - center, larger and raised */}
-            <div className="animate-fade-in-up stagger-item-2 transform md:-translate-y-8 hover:translate-y-0 smooth-transition">
-              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
+            {/* $1M Card - center, largest */}
+            <div className="animate-fade-in-up stagger-item-2 md:flex md:justify-center md:-translate-y-2">
+              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden md:max-w-sm">
                 <div className="absolute -inset-2 bg-black opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
                 <p className="text-7xl font-black mb-2 relative z-10">$1M</p>
                 <p className="font-black text-xl text-black relative z-10">PEAK</p>
@@ -119,9 +119,9 @@ export default function About() {
               </div>
             </div>
 
-            {/* $200K+ Card - bottom right, rotated */}
-            <div className="animate-fade-in-up stagger-item-3 transform md:rotate-3 hover:rotate-0 smooth-transition">
-              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full">
+            {/* $200K+ Card - down position */}
+            <div className="animate-fade-in-up stagger-item-3 transform md:translate-y-16 md:rotate-3 hover:rotate-0 smooth-transition md:max-w-xs md:ml-auto">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
                 <p className="text-6xl font-black mb-2 relative z-10">$200K+</p>
                 <p className="font-black text-lg text-gray-300 relative z-10">Floor</p>
