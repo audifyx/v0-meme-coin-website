@@ -3,8 +3,7 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import PriceChart from '@/components/PriceChart'
 import MemeWall from '@/components/MemeWall'
-import ImageGenPlaceholder from '@/components/ImageGenPlaceholder'
-import PFPGenerator from '@/components/PFPGenerator'
+import UNTImageCreator from '@/components/UNTImageCreator'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -15,8 +14,7 @@ export default function Home() {
       <About />
       <PriceChart />
       <MemeWall />
-      <ImageGenPlaceholder />
-      <PFPGenerator />
+      <UNTImageCreator />
       <Footer />
     </main>
   )

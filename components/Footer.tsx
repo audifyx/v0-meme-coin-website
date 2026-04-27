@@ -45,11 +45,6 @@ export default function Footer() {
                   Memes
                 </Link>
               </li>
-              <li>
-                <Link href="#pfp" className="font-bold text-black hover:underline">
-                  PFP Gen
-                </Link>
-              </li>
             </ul>
           </div>
 
