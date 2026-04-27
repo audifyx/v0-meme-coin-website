@@ -1,34 +1,44 @@
 'use client'
 
-import { TrendingUp } from 'lucide-react'
-import { getMockPriceData, formatPrice, formatUSD, formatPercent } from '@/lib/priceData'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+const CA = '6QxEWmorqGxGxRZsmNxghB9aZYNXZjudtovE5L4Qpump'
 
 export default function PriceChart() {
-  const data = getMockPriceData()
-  
-  const formattedData = {
-    current: formatPrice(data.current),
-    change24h: formatPercent(data.change24h),
-    high24h: formatPrice(data.high24h),
-    low24h: formatPrice(data.low24h),
-    volume: formatUSD(data.volume),
-    marketCap: formatUSD(data.marketCap)
-  }
-
   return (
-    <section id="chart" className="bg-black text-white border-b-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-12 border-b-4 border-white pb-6">
-          PRICE & CHART
-        </h2>
+    <section id="chart" className="bg-black border-b border-white/10 py-24">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="mb-12">
+          <p className="text-white/40 text-xs font-bold tracking-widest mb-3">✦ LIVE DATA</p>
+          <h2 className="text-5xl md:text-6xl font-black text-white">CHART</h2>
+        </div>
 
-        <div className="bg-white text-black border-4 border-white p-12 min-h-96 flex flex-col items-center justify-center">
-          <p className="text-6xl font-black mb-6">📊</p>
-          <p className="text-5xl font-black mb-4 text-center">COMING SOON</p>
-          <p className="text-xl font-bold text-gray-600 text-center max-w-md">
-            Real-time price data and interactive charts are being prepared. Stay tuned for live market updates.
-          </p>
+        {/* DEX links */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          <a href={`https://dexscreener.com/solana/${CA}`} target="_blank"
+            className="border border-white/20 text-white/60 hover:text-white hover:border-white/40 px-5 py-2 text-xs font-bold tracking-widest transition">
+            DEXSCREENER ↗
+          </a>
+          <a href={`https://www.dextools.io/app/en/solana/pair-explorer/${CA}`} target="_blank"
+            className="border border-white/20 text-white/60 hover:text-white hover:border-white/40 px-5 py-2 text-xs font-bold tracking-widest transition">
+            DEXTOOLS ↗
+          </a>
+          <a href={`https://raydium.io/swap/?outputCurrency=${CA}`} target="_blank"
+            className="bg-white text-black px-5 py-2 text-xs font-bold tracking-widest hover:bg-white/90 transition">
+            BUY ON RAYDIUM ↗
+          </a>
+          <a href={`https://jup.ag/swap/SOL-${CA}`} target="_blank"
+            className="bg-white text-black px-5 py-2 text-xs font-bold tracking-widest hover:bg-white/90 transition">
+            BUY ON JUPITER ↗
+          </a>
+        </div>
+
+        {/* Embedded DEX chart */}
+        <div className="w-full h-[500px] border border-white/10 overflow-hidden">
+          <iframe
+            src={`https://dexscreener.com/solana/${CA}?embed=1&theme=dark&trades=0&info=0`}
+            className="w-full h-full"
+            style={{ border: 'none' }}
+            title="$UNT Chart"
+          />
         </div>
       </div>
     </section>
