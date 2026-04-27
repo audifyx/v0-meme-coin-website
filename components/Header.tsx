@@ -22,7 +22,7 @@ export default function Header() {
               Chart
             </Link>
             <Link href="#image-gen" className="font-bold text-black hover:underline">
-              Image Gen
+              Create
             </Link>
             <Link href="#memes" className="font-bold text-black hover:underline">
               Memes

@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useRef } from 'react'
 import Image from 'next/image'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const characterImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_045616_551-xDCMa6HTmXrgDG0GKmMC7bWlhKf2yE.jpg',
@@ -22,97 +23,68 @@ const characterImages = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051713_895-FPezJR7FUOgJbShEHdQBjtfl7QEXEV.jpg',
 ]
 
-interface MemeItem {
-  id: number
-  image: string
-}
-
 export default function MemeWall() {
-  const [memes, setMemes] = useState<MemeItem[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-  const observerTarget = useRef<HTMLDivElement>(null)
-  const loadedCount = useRef(0)
+  const scrollContainer = useRef<HTMLDivElement>(null)
 
-  // Load initial memes
-  useEffect(() => {
-    loadMoreMemes()
-  }, [])
-
-  const loadMoreMemes = useCallback(() => {
-    setIsLoading(true)
-    // Simulate loading delay
-    setTimeout(() => {
-      const newMemes: MemeItem[] = []
-      for (let i = 0; i < 8; i++) {
-        const id = loadedCount.current++
-        newMemes.push({
-          id,
-          image: characterImages[id % characterImages.length]
-        })
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainer.current) {
+      const scrollAmount = 400
+      if (direction === 'left') {
+        scrollContainer.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+      } else {
+        scrollContainer.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
       }
-      setMemes(prev => [...prev, ...newMemes])
-      setIsLoading(false)
-    }, 300)
-  }, [])
-
-  // Intersection Observer for infinite scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting && !isLoading) {
-          loadMoreMemes()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current)
     }
-
-    return () => observer.disconnect()
-  }, [isLoading, loadMoreMemes])
+  }
 
   return (
     <section id="memes" className="bg-white border-b-4 border-black">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-12 border-b-4 border-black pb-6">
-          MEME WALL
+        <h2 className="text-5xl font-black mb-8 border-b-4 border-black pb-6">
+          $UNT MEME GALLERY
         </h2>
 
-        {/* Infinite scroll grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {memes.map(meme => (
-            <div
-              key={meme.id}
-              className="bg-black border-4 border-black overflow-hidden hover:scale-105 transition-transform cursor-pointer group"
-            >
-              <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
-                <Image
-                  src={meme.image}
-                  alt={`Meme ${meme.id}`}
-                  fill
-                  className="object-cover group-hover:opacity-80 transition-opacity"
-                />
-              </div>
-              <div className="bg-white text-black p-4 border-t-4 border-black">
-                <p className="font-bold text-sm">#UNT Meme {meme.id + 1}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Horizontal carousel container */}
+        <div className="relative">
+          {/* Left button */}
+          <button
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+          >
+            <ChevronLeft size={24} />
+          </button>
 
-        {/* Loading indicator */}
-        {isLoading && (
-          <div className="flex justify-center mb-8">
-            <div className="bg-black text-white px-8 py-4 font-bold border-4 border-black">
-              LOADING...
-            </div>
+          {/* Scrollable carousel */}
+          <div
+            ref={scrollContainer}
+            className="flex gap-4 overflow-x-auto scroll-smooth px-16"
+            style={{ scrollBehavior: 'smooth' }}
+          >
+            {characterImages.map((image, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-80 h-96 bg-black border-4 border-black overflow-hidden hover:scale-105 transition-transform cursor-pointer group"
+              >
+                <div className="relative w-full h-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={image}
+                    alt={`$UNT Meme ${index + 1}`}
+                    fill
+                    className="object-cover group-hover:opacity-80 transition-opacity"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-        )}
 
-        {/* Intersection observer target */}
-        <div ref={observerTarget} className="h-4" />
+          {/* Right button */}
+          <button
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
     </section>
   )

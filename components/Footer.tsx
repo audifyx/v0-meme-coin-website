@@ -37,7 +37,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#image-gen" className="font-bold text-black hover:underline">
-                  Image Gen
+                  Create
                 </Link>
               </li>
               <li>
