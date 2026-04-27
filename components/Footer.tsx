@@ -64,13 +64,26 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t-4 border-black pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="font-black text-black text-center md:text-left mb-4 md:mb-0">
+        <div className="border-t-4 border-black pt-8">
+          <p className="font-black text-black text-center md:text-left mb-4">
             Contract: Coming Soon | Built for the $UNT Cult
           </p>
-          <p className="font-bold text-gray-600">
-            © 2026 $UNT. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p className="font-bold text-gray-600 mb-4 md:mb-0">
+              © 2026 $UNT. All rights reserved.
+            </p>
+            <p className="font-bold text-black">
+              Built by{' '}
+              <a
+                href="https://x.com/para1laxx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                @para1laxx
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
