@@ -2,16 +2,14 @@
 
 export default function TickerBanner() {
   const messages = [
-    '💎 $UNT to the moon 🚀',
-    '🔥 Buy $UNT NOW 💰',
-    '👽 Join the cult',
-    '⚡ We&apos;re not stopping',
-    '🎯 $UNT = Future',
-    '🌟 Community powered',
+    '$UNT to the moon 🚀',
+    'Buy $UNT NOW 💰',
+    'Join the cult 👽',
+    'We&apos;re not stopping 🔥',
   ]
 
   return (
-    <div className="bg-yellow-400 text-black border-b-4 border-black overflow-hidden relative">
+    <div className="bg-black text-white border-b-4 border-black overflow-hidden relative">
       <style>{`
         @keyframes ticker-scroll {
           0% {
