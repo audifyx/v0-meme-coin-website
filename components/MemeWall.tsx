@@ -33,35 +33,44 @@ export default function MemeWall() {
   }
 
   return (
-    <section id="memes" className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-5xl font-black text-white mb-12 text-center">
+    <section id="memes" className="bg-white py-20 border-b-4 border-black">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-5xl font-black text-black mb-12 border-b-4 border-black pb-6">
           MEME GALLERY
         </h2>
 
-        <div className="relative">
+        <div className="relative group">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
           >
             ←
           </button>
 
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto scroll-smooth px-16"
+            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 px-16"
             style={{ scrollBehavior: 'smooth' }}
           >
             {characterImages.map((image, index) => (
-              <div key={index} className="flex-shrink-0 w-80 h-96 rounded overflow-hidden hover:scale-105 transition">
-                <Image src={image} alt={`Meme ${index + 1}`} fill className="object-cover" />
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-96 h-80 bg-black border-4 border-black overflow-hidden hover:scale-105 transition cursor-pointer"
+              >
+                <Image 
+                  src={image} 
+                  alt={`$UNT Meme ${index + 1}`} 
+                  fill 
+                  className="object-cover"
+                  sizes="384px"
+                />
               </div>
             ))}
           </div>
 
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
           >
             →
           </button>
