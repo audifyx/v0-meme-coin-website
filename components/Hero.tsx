@@ -72,6 +72,26 @@ export default function Hero() {
           </div>
         </div>
       </section>
+      </section>
+      {/* CA Copy Section */}
+      <div className="bg-black text-white border-b-4 border-black py-4 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
+          <span className="font-black text-xs uppercase tracking-widest text-gray-400">CONTRACT ADDRESS</span>
+          <div className="flex items-center gap-3 bg-white/10 border border-white/20 rounded px-4 py-2 w-full sm:w-auto">
+            <code className="font-mono text-xs sm:text-sm text-white truncate max-w-[220px] sm:max-w-none">
+              CA COMING SOON
+            </code>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText('CA COMING SOON')
+              }}
+              className="flex-shrink-0 bg-white text-black px-3 py-1 font-black text-xs hover:bg-gray-200 transition rounded"
+            >
+              COPY
+            </button>
+          </div>
+        </div>
+      </div>
       <ArticleModal isOpen={isArticleOpen} onClose={() => setIsArticleOpen(false)} />
     </>
   )
