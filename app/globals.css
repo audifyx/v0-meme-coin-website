@@ -1,5 +1,53 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './animations.css';
+
+/* Meme Coin Animations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+@keyframes bounce-spin {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); }
+}
+
+@keyframes rainbow-shift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.animate-bounce-spin {
+  animation: bounce-spin 3s ease-in-out infinite;
+}
+
+.animate-float-bob {
+  animation: float-bob 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-rainbow-shift {
+  animation: rainbow-shift 4s linear infinite;
+}
 
 @custom-variant dark (&:is(.dark *));
 

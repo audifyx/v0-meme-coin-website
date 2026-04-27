@@ -38,40 +38,51 @@ export default function MemeWall() {
   }
 
   return (
-    <section id="memes" className="bg-white border-b-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-8 border-b-4 border-black pb-6">
-          $UNT MEME GALLERY
-        </h2>
+    <section id="memes" className="bg-white border-b-4 border-black relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+        <div className="mb-16">
+          <h2 className="text-6xl md:text-7xl font-black mb-4 animate-fade-in-down">
+            MEME GALLERY
+          </h2>
+          <div className="h-2 w-24 rounded-full bg-black animate-fade-in-up stagger-item-2"></div>
+        </div>
 
         {/* Horizontal carousel container */}
-        <div className="relative">
+        <div className="relative group">
           {/* Left button */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 rounded-full border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={28} />
           </button>
 
           {/* Scrollable carousel */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto scroll-smooth px-16"
+            className="flex gap-6 overflow-x-auto scroll-smooth px-20"
             style={{ scrollBehavior: 'smooth' }}
           >
             {characterImages.map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-80 h-96 bg-black border-4 border-black overflow-hidden hover:scale-105 transition-transform cursor-pointer group"
+                className="flex-shrink-0 w-80 h-96 cursor-pointer group/card animate-fade-in-up hover-lift"
+                style={{ animationDelay: `${(index % 4) * 80}ms` }}
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100">
+                <div className="relative w-full h-full overflow-hidden bg-gray-100 rounded-3xl border-4 border-black shadow-light group-hover/card:shadow-heavy smooth-transition">
                   <Image
                     src={image}
                     alt={`$UNT Meme ${index + 1}`}
                     fill
-                    className="object-cover group-hover:opacity-80 transition-opacity"
+                    className="object-cover group-hover/card:scale-110 smooth-transition rounded-2xl"
                   />
+                  {/* Dark overlay on hover */}
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-10 smooth-transition rounded-2xl"></div>
                 </div>
               </div>
             ))}
@@ -80,9 +91,9 @@ export default function MemeWall() {
           {/* Right button */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 border-4 border-black hover:bg-gray-800 transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 rounded-full border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={28} />
           </button>
         </div>
       </div>
