@@ -126,14 +126,6 @@ export default function About() {
             </div>
           </div>
         </div>
-            <p className="group-hover:text-gray-800 smooth-transition">
-              We sent this to a million before. The infrastructure was new, the coordination was rough. Now? We know what works. We know who&apos;s here. We know what we&apos;re building.
-            </p>
-            <p className="text-2xl font-black group-hover:text-gray-800 smooth-transition border-t-4 border-black pt-6">
-              Same vision. Same energy. Better execution. Welcome back to $UNT.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   )
