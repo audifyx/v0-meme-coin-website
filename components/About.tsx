@@ -144,7 +144,7 @@ export default function About() {
               <h3 className="text-7xl md:text-8xl font-black leading-none transform skew-y-2 mb-2">
                 THE
               </h3>
-              <h3 className="text-8xl md:text-9xl font-black leading-none transform -skew-y-3 text-white/70 whitespace-nowrap">
+              <h3 className="text-6xl md:text-7xl font-black leading-none transform -skew-y-3 text-white/70 whitespace-nowrap">
                 RELAUNCH
               </h3>
             </div>
