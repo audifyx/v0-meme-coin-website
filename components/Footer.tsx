@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div>
+          <div className="animate-fade-in-up">
             <h3 className="text-4xl font-black text-black mb-4">$UNT</h3>
             <p className="font-bold text-black">
               A global icon born from the trenches. The future is $UNT.
@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div>
+          <div className="animate-fade-in-up stagger-item-2">
             <h4 className="text-xl font-black text-black mb-4">NAVIGATE</h4>
             <ul className="space-y-2">
               <li>
@@ -49,13 +49,13 @@ export default function Footer() {
           </div>
 
           {/* Social */}
-          <div>
+          <div className="animate-fade-in-up stagger-item-3">
             <h4 className="text-xl font-black text-black mb-4">COMMUNITY</h4>
             <a
               href="https://x.com/UNTuniverse"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-gray-800"
+              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-gray-800 smooth-transition hover-lift"
             >
               <Twitter size={20} />
               <span>@UNTuniverse</span>

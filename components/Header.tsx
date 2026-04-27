@@ -36,7 +36,7 @@ export default function Header() {
           href="https://x.com/UNTuniverse"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-black text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-gray-800 border-2 border-black"
+          className="bg-black text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-gray-800 border-2 border-black smooth-transition hover-lift"
         >
           <Twitter size={20} />
           <span>Follow</span>

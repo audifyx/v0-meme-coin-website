@@ -4,12 +4,12 @@ export default function About() {
   return (
     <section id="about" className="bg-black text-white border-b-4 border-black">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-5xl font-black mb-12 border-b-4 border-white pb-6">
+        <h2 className="text-5xl font-black mb-12 border-b-4 border-white pb-6 animate-fade-in-down">
           ABOUT $UNT
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white text-black p-8 border-4 border-white">
+          <div className="bg-white text-black p-8 border-4 border-white hover-lift animate-fade-in-up">
             <h3 className="text-2xl font-black mb-4">THE VISION</h3>
             <p className="font-bold leading-relaxed mb-4">
               $UNT is a free idol representing independence, love, care, craziness, wealth, and fun. It&apos;s not just a token—it&apos;s a movement born from the trenches.
@@ -19,7 +19,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-white text-black p-8 border-4 border-white">
+          <div className="bg-white text-black p-8 border-4 border-white hover-lift animate-fade-in-up stagger-item-2">
             <h3 className="text-2xl font-black mb-4">THE CULTURE</h3>
             <p className="font-bold leading-relaxed mb-4">
               We stay. We show up every day with new content, new energy, and new moves.
@@ -30,20 +30,20 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-white text-black p-8 border-4 border-white mb-8">
+        <div className="bg-white text-black p-8 border-4 border-white mb-8 hover-lift animate-fade-in-up stagger-item-3">
           <h3 className="text-2xl font-black mb-6">LAUNCH HISTORY</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-black pl-6">
+            <div className="border-l-4 border-black pl-6 animate-fade-in-up">
               <p className="text-4xl font-black text-gray-400">$5K</p>
               <p className="font-bold">Launch Price</p>
               <p className="text-sm font-bold text-gray-600">Day 1 start</p>
             </div>
-            <div className="border-l-4 border-black pl-6">
+            <div className="border-l-4 border-black pl-6 animate-fade-in-up stagger-item-2">
               <p className="text-4xl font-black text-gray-400">$1M</p>
               <p className="font-bold">Peak Achieved</p>
               <p className="text-sm font-bold text-gray-600">5 minutes to bond, 10 min to $200K</p>
             </div>
-            <div className="border-l-4 border-black pl-6">
+            <div className="border-l-4 border-black pl-6 animate-fade-in-up stagger-item-3">
               <p className="text-4xl font-black text-gray-400">$200K+</p>
               <p className="font-bold">Strong Floor</p>
               <p className="text-sm font-bold text-gray-600">Community holding strong</p>
@@ -51,7 +51,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-white text-black p-8 border-4 border-white">
+        <div className="bg-white text-black p-8 border-4 border-white hover-lift animate-fade-in-up stagger-item-4">
           <h3 className="text-2xl font-black mb-6">THE RELAUNCH - STRONGER, SMARTER, BETTER</h3>
           <div className="space-y-4 font-bold">
             <p>

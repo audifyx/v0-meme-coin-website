@@ -12,35 +12,35 @@ export default function Hero() {
       <section id="hero" className="bg-white border-b-4 border-black">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-6xl md:text-7xl font-black text-black mb-6">
+            <div className="animate-fade-in-left">
+              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 animate-fade-in-up">
                 $UNT
               </h1>
-              <p className="text-xl font-bold text-black mb-6 leading-relaxed">
+              <p className="text-xl font-bold text-black mb-6 leading-relaxed animate-fade-in-up stagger-item-2">
                 Romeo needs Juliet. Tom needs Jerry. <span className="text-2xl">$UNC needs $UNT.</span>
               </p>
-              <p className="text-lg font-bold text-black mb-8">
+              <p className="text-lg font-bold text-black mb-8 animate-fade-in-up stagger-item-3">
                 A free idol representing independence, love, care, craziness, wealth, and fun.
               </p>
-              <div className="flex gap-4">
-                <button className="bg-black text-white px-8 py-4 font-black text-lg border-4 border-black hover:bg-gray-900">
+              <div className="flex gap-4 animate-fade-in-up stagger-item-4">
+                <button className="bg-black text-white px-8 py-4 font-black text-lg border-4 border-black hover:bg-gray-900 smooth-transition hover-lift">
                   BUY NOW
                 </button>
                 <button
                   onClick={() => setIsArticleOpen(true)}
-                  className="bg-white text-black px-8 py-4 font-black text-lg border-4 border-black hover:bg-gray-100"
+                  className="bg-white text-black px-8 py-4 font-black text-lg border-4 border-black hover:bg-gray-100 smooth-transition hover-lift"
                 >
                   LEARN MORE
                 </button>
               </div>
             </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fade-in-right">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051720_699-i5AvbEGml8Ymn0cV22lJrmLzCz7kAm.jpg"
               alt="$UNT Character - Dinner Scene"
               width={500}
               height={400}
-              className="w-full max-w-md border-4 border-black"
+              className="w-full max-w-md border-4 border-black hover-scale"
               priority
             />
           </div>
