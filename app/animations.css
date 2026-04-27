@@ -137,22 +137,107 @@
   animation: bounce 2s ease-in-out infinite;
 }
 
-/* Hover effects */
+/* Advanced parallax effect */
+@keyframes parallaxFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes parallaxFloatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Blur-in effect */
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Slide with rotation */
+@keyframes slideRotateIn {
+  from {
+    opacity: 0;
+    transform: translateX(-60px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+/* Text reveal line by line */
+@keyframes lineReveal {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0);
+  }
+}
+
+/* Border animate */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Hover effects - Premium */
 .hover-scale {
-  transition: transform 0.3s ease-out;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hover-scale:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .hover-lift {
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-16px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3),
+              0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-lift-subtle {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift-subtle:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* Text effects */
@@ -163,16 +248,45 @@
   background-clip: text;
 }
 
-/* Smooth transitions */
+/* Smooth transitions - Premium */
 .smooth-transition {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.smooth-transition-fast {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Shadow effects */
 .shadow-heavy {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .shadow-light {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply advanced animations */
+.animate-blur-in {
+  animation: blurIn 0.8s ease-out forwards;
+}
+
+.animate-slide-rotate {
+  animation: slideRotateIn 0.8s ease-out forwards;
+}
+
+.animate-parallax-float {
+  animation: parallaxFloat 4s ease-in-out infinite;
+}
+
+.animate-parallax-float-reverse {
+  animation: parallaxFloatReverse 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.animate-border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
 }
