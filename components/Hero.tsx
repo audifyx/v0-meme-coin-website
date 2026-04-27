@@ -28,11 +28,12 @@ export default function Hero() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/characters/unt-main.jpg"
-              alt="$UNT Character"
-              width={400}
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051720_699-i5AvbEGml8Ymn0cV22lJrmLzCz7kAm.jpg"
+              alt="$UNT Character - Dinner Scene"
+              width={500}
               height={400}
               className="w-full max-w-md border-4 border-black"
+              priority
             />
           </div>
         </div>
