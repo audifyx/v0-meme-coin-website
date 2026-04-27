@@ -72,7 +72,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-      </section>
       {/* CA Copy Section */}
       <div className="bg-black text-white border-b-4 border-black py-4 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
