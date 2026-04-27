@@ -21,6 +21,9 @@ export default function Header() {
             <Link href="#chart" className="font-bold text-black hover:underline">
               Chart
             </Link>
+            <Link href="#image-gen" className="font-bold text-black hover:underline">
+              Image Gen
+            </Link>
             <Link href="#memes" className="font-bold text-black hover:underline">
               Memes
             </Link>

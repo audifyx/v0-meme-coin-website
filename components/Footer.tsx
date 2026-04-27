@@ -36,6 +36,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#image-gen" className="font-bold text-black hover:underline">
+                  Image Gen
+                </Link>
+              </li>
+              <li>
                 <Link href="#memes" className="font-bold text-black hover:underline">
                   Memes
                 </Link>
