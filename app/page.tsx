@@ -11,12 +11,15 @@ import Footer from '@/components/Footer'
 export default function Home() {
   return (
     <main className="bg-white">
-      {/* Repeating tagline banner */}
-      <div className="bg-black text-white py-3 border-b-4 border-black overflow-hidden">
-        <div className="inline-block whitespace-nowrap animate-scroll text-sm font-black">
-          <span>★ $UNC NEEDS $UNT ★ NOT A TOKEN, A MOVEMENT ★ 7 BANS, STILL HERE ★ $1M ON DAY 1 ★ COMMUNITY IS STRENGTH ★ $UNC NEEDS $UNT ★ NOT A TOKEN, A MOVEMENT ★ 7 BANS, STILL HERE ★ $1M ON DAY 1 ★ COMMUNITY IS STRENGTH ★</span>
+      {/* Fixed tagline banner at top */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black text-white py-3 border-b-4 border-black overflow-hidden">
+        <div className="text-sm font-black text-center">
+          ★ $UNC NEEDS $UNT ★ NOT A TOKEN, A MOVEMENT ★ 7 BANS, STILL HERE ★ $1M ON DAY 1 ★ COMMUNITY IS STRENGTH ★
         </div>
       </div>
+
+      {/* Spacer for fixed banner */}
+      <div className="h-16" />
 
       <Header />
       <Hero />
