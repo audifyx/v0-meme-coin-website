@@ -10,138 +10,190 @@ export default function About() {
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-[0.05] bg-white blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-        <div className="mb-20">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-              <h2 className="text-7xl md:text-8xl font-black mb-6 animate-fade-in-down leading-tight">
-                ABOUT $UNT
-              </h2>
-              <div className="h-2 w-32 rounded-full bg-white animate-fade-in-up stagger-item-2"></div>
-            </div>
-            
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-item-3">
-              <a
-                href="https://x.com/UNTuniverse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 bg-white text-black px-8 py-4 font-black rounded-2xl border-4 border-white hover:bg-gray-100 smooth-transition hover-lift-subtle shadow-heavy relative overflow-hidden"
-              >
-                <Twitter size={24} />
-                <span>X COMMUNITY</span>
-              </a>
-              <a
-                href="https://raydium.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 bg-black text-white px-8 py-4 font-black border-4 border-white rounded-2xl hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy relative overflow-hidden"
-              >
-                <ExternalLink size={24} />
-                <span>TRADE NOW</span>
-              </a>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 py-24 relative z-10">
+        {/* Header with playful skew */}
+        <div className="mb-28 relative">
+          <div className="flex flex-col items-center justify-center text-center mb-16">
+            <h2 className="text-7xl md:text-9xl font-black mb-6 animate-fade-in-down leading-tight transform -skew-y-2">
+              ABOUT
+            </h2>
+            <h2 className="text-5xl md:text-7xl font-black mb-0 animate-fade-in-down text-white/60 transform skew-y-3">
+              $UNT
+            </h2>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="group relative animate-fade-in-up">
-            {/* Background glow effect */}
-            <div className="absolute -inset-1 bg-white rounded-3xl opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
-            
-            <div className="relative bg-gradient-to-br from-white to-gray-100 text-black p-10 rounded-3xl border-4 border-white hover-lift-subtle shadow-heavy smooth-transition overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-black opacity-0 group-hover:opacity-5 rounded-full blur-3xl smooth-transition"></div>
-              <h3 className="text-4xl font-black mb-6 group-hover:text-gray-800 smooth-transition">THE VISION</h3>
-              <div className="h-1 w-16 rounded-full bg-black mb-8 group-hover:w-20 smooth-transition origin-left"></div>
-              <p className="font-bold leading-relaxed mb-5 text-lg">
-                $UNT is a free idol representing independence, love, care, craziness, wealth, and fun. It&apos;s not just a token—it&apos;s a movement born from the trenches.
-              </p>
-              <p className="font-bold text-gray-700 text-base">
-                The potential to become a global icon evolving into merch, NFTs, and cultural movements.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative animate-fade-in-up stagger-item-2">
-            {/* Background glow effect */}
-            <div className="absolute -inset-1 bg-white rounded-3xl opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
-            
-            <div className="relative bg-gradient-to-br from-white to-gray-100 text-black p-10 rounded-3xl border-4 border-white hover-lift-subtle shadow-heavy smooth-transition overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-black opacity-0 group-hover:opacity-5 rounded-full blur-3xl smooth-transition"></div>
-              <h3 className="text-4xl font-black mb-6 group-hover:text-gray-800 smooth-transition">THE CULTURE</h3>
-              <div className="h-1 w-16 rounded-full bg-black mb-8 group-hover:w-20 smooth-transition origin-left"></div>
-              <p className="font-bold leading-relaxed mb-5 text-lg">
-                We stay. We show up every day with new content, new energy, and new moves.
-              </p>
-              <p className="font-bold text-gray-700 text-base">
-                This is more than a token—this is the $UNT cult. All we need is support, because together, we will flip the tables.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="group relative mb-16 animate-fade-in-up stagger-item-3">
-          {/* Background glow effect */}
-          <div className="absolute -inset-1 bg-white rounded-3xl opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
           
-          <div className="relative bg-gradient-to-br from-white to-gray-100 text-black p-12 rounded-3xl border-4 border-white hover-lift-subtle shadow-heavy smooth-transition overflow-hidden">
-            <div className="absolute top-0 left-1/2 w-40 h-40 bg-black opacity-0 group-hover:opacity-10 rounded-full blur-3xl smooth-transition -translate-x-1/2"></div>
-            <h3 className="text-4xl font-black mb-12 group-hover:text-gray-800 smooth-transition">LAUNCH HISTORY</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="group/item bg-black text-white rounded-2xl p-10 hover-lift smooth-transition relative overflow-hidden animate-fade-in-up border-4 border-black">
-                <div className="absolute top-0 left-0 w-full h-2 bg-white scale-x-0 group-hover/item:scale-x-100 smooth-transition origin-left"></div>
-                <p className="text-6xl font-black mb-3">$5K</p>
-                <p className="font-black text-lg mb-2 text-gray-300">Launch Price</p>
-                <p className="text-sm font-bold text-gray-400">Day 1 start</p>
+          {/* Action Buttons - centered */}
+          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up stagger-item-3 justify-center items-center">
+            <a
+              href="https://x.com/UNTuniverse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-2 bg-white text-black px-8 py-4 font-black text-sm rounded-full border-3 border-white hover:rotate-3 smooth-transition hover-lift shadow-heavy hover:shadow-2xl relative overflow-hidden transition-all duration-300"
+            >
+              <Twitter size={20} />
+              <span>FOLLOW</span>
+            </a>
+            <a
+              href="https://raydium.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-2 bg-black text-white px-8 py-4 font-black text-sm border-3 border-white rounded-full hover:-rotate-3 smooth-transition hover-lift shadow-heavy hover:shadow-2xl relative overflow-hidden transition-all duration-300"
+            >
+              <ExternalLink size={20} />
+              <span>TRADE</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Playful asymmetric card layout */}
+        <div className="space-y-12 mb-24">
+          {/* Vision Card - rotated left */}
+          <div className="group relative animate-fade-in-up transform md:-rotate-2">
+            <div className="absolute -inset-3 bg-white rounded-3xl opacity-0 group-hover:opacity-20 blur-xl smooth-transition"></div>
+            <div className="relative bg-white text-black p-12 rounded-3xl border-4 border-white shadow-heavy smooth-transition overflow-hidden group-hover:shadow-2xl group-hover:scale-102">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-black opacity-10 rounded-full blur-2xl group-hover:opacity-20 smooth-transition"></div>
+              <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8">
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-5xl md:text-6xl font-black mb-6 group-hover:translate-x-2 smooth-transition leading-tight">THE VISION</h3>
+                  <div className="h-2 w-24 rounded-full bg-black mb-8 mx-auto md:mx-0 group-hover:w-32 smooth-transition"></div>
+                  <p className="font-bold text-lg leading-relaxed mb-6">
+                    $UNT is a free idol representing independence, love, care, craziness, wealth, and fun.
+                  </p>
+                  <p className="font-bold text-gray-700 text-base leading-relaxed">
+                    It&apos;s not just a token—it&apos;s a movement born from the trenches, ready to evolve into merch, NFTs, and global culture.
+                  </p>
+                </div>
+                <div className="text-7xl md:text-8xl font-black text-black/5 group-hover:text-black/10 smooth-transition flex-shrink-0">
+                  💭
+                </div>
               </div>
-              <div className="group/item bg-black text-white rounded-2xl p-10 hover-lift smooth-transition relative overflow-hidden animate-fade-in-up stagger-item-2 border-4 border-black">
-                <div className="absolute top-0 left-0 w-full h-2 bg-white scale-x-0 group-hover/item:scale-x-100 smooth-transition origin-left"></div>
-                <p className="text-6xl font-black mb-3">$1M</p>
-                <p className="font-black text-lg mb-2 text-gray-300">Peak Achieved</p>
-                <p className="text-sm font-bold text-gray-400">5 min to bond, 10 min to $200K</p>
-              </div>
-              <div className="group/item bg-black text-white rounded-2xl p-10 hover-lift smooth-transition relative overflow-hidden animate-fade-in-up stagger-item-3 border-4 border-black">
-                <div className="absolute top-0 left-0 w-full h-2 bg-white scale-x-0 group-hover/item:scale-x-100 smooth-transition origin-left"></div>
-                <p className="text-6xl font-black mb-3">$200K+</p>
-                <p className="font-black text-lg mb-2 text-gray-300">Strong Floor</p>
-                <p className="text-sm font-bold text-gray-400">Community holding strong</p>
+            </div>
+          </div>
+
+          {/* Culture Card - rotated right, offset */}
+          <div className="group relative animate-fade-in-up transform md:rotate-2 mt-12">
+            <div className="absolute -inset-3 bg-white rounded-3xl opacity-0 group-hover:opacity-20 blur-xl smooth-transition"></div>
+            <div className="relative bg-white text-black p-12 rounded-3xl border-4 border-white shadow-heavy smooth-transition overflow-hidden group-hover:shadow-2xl group-hover:scale-102">
+              <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-black opacity-10 rounded-full blur-2xl group-hover:opacity-20 smooth-transition"></div>
+              <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8">
+                <div className="text-7xl md:text-8xl font-black text-black/5 group-hover:text-black/10 smooth-transition flex-shrink-0">
+                  🔥
+                </div>
+                <div className="flex-1 text-center md:text-right">
+                  <h3 className="text-5xl md:text-6xl font-black mb-6 group-hover:-translate-x-2 smooth-transition leading-tight">THE CULTURE</h3>
+                  <div className="h-2 w-24 rounded-full bg-black mb-8 mx-auto md:ml-auto md:mr-0 group-hover:w-32 smooth-transition"></div>
+                  <p className="font-bold text-lg leading-relaxed mb-6">
+                    We show up every day with new content, new energy, new moves.
+                  </p>
+                  <p className="font-bold text-gray-700 text-base leading-relaxed">
+                    This is more than a token—this is the $UNT cult. Together, we&apos;ll flip the tables.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="group relative animate-fade-in-up stagger-item-4">
-          {/* Background glow effect */}
-          <div className="absolute -inset-1 bg-white rounded-3xl opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
+        {/* Launch History - Playful scattered layout */}
+        <div className="mb-32 relative">
+          <div className="mb-20 animate-fade-in-down transform -skew-x-2">
+            <h3 className="text-6xl md:text-7xl font-black leading-none text-center">
+              LAUNCH
+            </h3>
+            <h3 className="text-6xl md:text-7xl font-black leading-none mt-4 text-center">
+              HISTORY
+            </h3>
+          </div>
           
-          <div className="relative bg-gradient-to-br from-white to-gray-100 text-black p-12 rounded-3xl border-4 border-white hover-lift-subtle shadow-heavy smooth-transition overflow-hidden">
-            <div className="absolute bottom-0 right-0 w-48 h-48 bg-black opacity-0 group-hover:opacity-20 rounded-full blur-3xl smooth-transition"></div>
-            <h3 className="text-4xl font-black mb-3 group-hover:text-gray-800 smooth-transition">THE RELAUNCH</h3>
-            <p className="text-sm font-black text-gray-600 uppercase tracking-widest mb-10">Stronger. Smarter. Better.</p>
-            
-            <div className="space-y-8 font-bold text-lg leading-relaxed relative z-10">
-              <p className="group-hover:text-gray-800 smooth-transition">
-                The last launch proved $UNT has real potential. We hit <span className="font-black text-xl">$1M in market cap</span>. We built momentum. We built community.
-              </p>
-              <p className="group-hover:text-gray-800 smooth-transition">
-                Then the system tried to stop us. X banned us 7 times. Charts got nuked. Our runs got halted. But the community? <span className="font-black text-xl">Still here. Still strong. Still believing.</span>
-              </p>
-              
-              <div className="bg-black text-white p-10 rounded-2xl border-4 border-black my-8 relative overflow-hidden group/inner">
-                <div className="absolute inset-0 bg-white opacity-0 group-hover/inner:opacity-5 smooth-transition"></div>
-                <p className="font-black text-3xl mb-4 relative z-10 leading-tight">WE DID IT ONCE.</p>
-                <p className="font-black text-3xl mb-6 relative z-10 leading-tight">WE&apos;LL DO IT AGAIN.</p>
-                <p className="relative z-10 font-bold text-base">
-                  This relaunch is smarter. We&apos;ve learned from the pressure. We&apos;ve built stronger infrastructure. The cult is organized. The movement is real.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 lg:gap-10">
+            {/* $5K Card - top left, rotated */}
+            <div className="animate-fade-in-up transform md:-rotate-3 md:hover:rotate-0 smooth-transition hover:z-20 flex">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full w-full flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
+                <p className="text-6xl font-black mb-6 relative z-10">$5K</p>
+                <p className="font-black text-lg text-gray-300 relative z-10 whitespace-nowrap">Launch</p>
+                <p className="text-xs font-bold text-gray-400 relative z-10 mt-3">Day 1</p>
+              </div>
+            </div>
+
+            {/* $1M Card - center, larger and raised */}
+            <div className="animate-fade-in-up stagger-item-2 transform hover:z-20 md:scale-110 flex">
+              <div className="group bg-white text-black rounded-3xl p-10 border-4 border-white shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full w-full flex flex-col items-center justify-center text-center">
+                <div className="absolute -inset-2 bg-black opacity-0 group-hover:opacity-10 blur-lg smooth-transition"></div>
+                <p className="text-7xl font-black mb-4 relative z-10">$1M</p>
+                <p className="font-black text-xl text-black relative z-10">PEAK</p>
+                <p className="text-sm font-bold text-gray-700 relative z-10 mt-2">Lightning fast 🔥</p>
+              </div>
+            </div>
+
+            {/* $200K+ Card - bottom right, rotated */}
+            <div className="animate-fade-in-up stagger-item-3 transform md:rotate-3 md:hover:rotate-0 smooth-transition hover:z-20 flex">
+              <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden h-full w-full flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
+                <p className="text-6xl font-black mb-6 relative z-10">$200K+</p>
+                <p className="font-black text-lg text-gray-300 relative z-10">Floor</p>
+                <p className="text-xs font-bold text-gray-400 relative z-10 mt-3">Community Holding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* The Relaunch - Bold & Playful */}
+        <div className="relative animate-fade-in-up stagger-item-4 mt-24 pt-24 border-t-4 border-white/30">
+          <div className="space-y-10 relative z-10">
+            {/* Playful header - centered */}
+            <div className="space-y-3 mb-16 text-center">
+              <h3 className="text-7xl md:text-8xl font-black leading-tight transform skew-y-2">
+                THE
+              </h3>
+              <h3 className="text-6xl md:text-7xl font-black leading-tight transform -skew-y-3 text-white/70 whitespace-nowrap inline-block w-full">
+                RELAUNCH
+              </h3>
+            </div>
+
+            {/* Narrative with playful highlights */}
+            <div className="space-y-10 pt-8">
+              <div className="group relative">
+                <div className="absolute -inset-4 bg-white rounded-2xl opacity-0 group-hover:opacity-5 smooth-transition"></div>
+                <p className="text-xl md:text-2xl font-black leading-relaxed relative z-10 text-white/90 max-w-3xl mx-auto text-center">
+                  The last launch proved $UNT has real potential. We hit 
+                  <span className="inline-block bg-white text-black px-6 py-3 mx-3 rounded-full font-black text-2xl transform hover:rotate-3 smooth-transition">
+                    $1M
+                  </span>
+                  in market cap.
                 </p>
               </div>
-              
-              <p className="group-hover:text-gray-800 smooth-transition">
-                We sent this to a million before. The infrastructure was new, the coordination was rough. Now? We know what works. We know who&apos;s here. We know what we&apos;re building.
-              </p>
-              <p className="text-2xl font-black group-hover:text-gray-800 smooth-transition border-t-4 border-black pt-8">
-                Same vision. Same energy. Better execution. Welcome back to $UNT.
-              </p>
+
+              <div className="group relative">
+                <div className="absolute -inset-4 bg-white rounded-2xl opacity-0 group-hover:opacity-5 smooth-transition"></div>
+                <p className="text-xl md:text-2xl font-black leading-relaxed relative z-10 text-white/90 max-w-3xl mx-auto text-center">
+                  Then the system tried to stop us. X banned us 7 times. Charts got nuked. But the community?
+                  <span className="block text-3xl md:text-4xl font-black text-white mt-4">
+                    STILL. HERE. STILL. STRONG.
+                  </span>
+                </p>
+              </div>
+
+              {/* Big callout box - centered and rotated */}
+              <div className="my-12 transform md:-rotate-2 group hover:rotate-0 smooth-transition flex justify-center">
+                <div className="bg-white text-black p-12 md:p-16 rounded-3xl border-4 border-white shadow-heavy relative overflow-hidden max-w-2xl text-center">
+                  <div className="absolute -top-8 -right-8 w-32 h-32 bg-black opacity-5 rounded-full blur-2xl group-hover:opacity-10 smooth-transition"></div>
+                  <p className="text-5xl md:text-7xl font-black leading-tight relative z-10">
+                    WE DID IT<br/>ONCE.<br/>
+                    <span className="text-white/70">WE&apos;LL DO IT AGAIN.</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="absolute -inset-4 bg-white rounded-2xl opacity-0 group-hover:opacity-5 smooth-transition"></div>
+                <p className="text-xl md:text-2xl font-black leading-relaxed relative z-10 text-white/90 max-w-3xl mx-auto text-center">
+                  Same vision. Same energy. 
+                  <span className="text-3xl block mt-4 text-white">
+                    BETTER EXECUTION.
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>

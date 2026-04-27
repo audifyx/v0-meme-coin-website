@@ -42,73 +42,87 @@ export default function HowToBuy() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-24 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-7xl md:text-8xl font-black text-black mb-6 animate-fade-in-down leading-tight">
-            HOW TO BUY
-          </h2>
-          <div className="h-2 w-32 rounded-full bg-black mx-auto mb-8 animate-fade-in-up stagger-item-2"></div>
-          <p className="text-xl font-bold text-gray-700 max-w-2xl mx-auto animate-fade-in-up stagger-item-3">
-            Four simple steps to join the revolution
+        {/* Playful header with skew - centered */}
+        <div className="mb-28 text-center">
+          <div className="space-y-2 mb-10 flex flex-col items-center justify-center">
+            <h2 className="text-8xl md:text-9xl font-black text-black leading-tight transform -skew-y-3 animate-fade-in-down">
+              HOW
+            </h2>
+            <h2 className="text-7xl md:text-8xl font-black text-black/50 leading-tight transform skew-y-2 animate-fade-in-down">
+              TO BUY
+            </h2>
+          </div>
+          <p className="text-2xl font-black text-black animate-fade-in-up stagger-item-3">
+            4 Steps. Get Rich. 🚀
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        {/* Playful zigzag step layout - centered */}
+        <div className="space-y-16 mb-24 relative flex flex-col items-center max-w-4xl mx-auto">
           {steps.map((step, idx) => {
             const IconComponent = step.icon
+            const isEven = idx % 2 === 0
             return (
               <div
                 key={step.number}
-                className="group animate-fade-in-up hover-lift"
-                style={{ animationDelay: `${idx * 80}ms` }}
+                className={`group animate-fade-in-up flex gap-6 md:gap-10 items-stretch transform w-full ${isEven ? '' : 'md:flex-row-reverse'} ${isEven ? 'md:-rotate-1 hover:rotate-0' : 'md:rotate-2 hover:rotate-0'} smooth-transition`}
+                style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="relative bg-white rounded-3xl p-10 h-full border-4 border-black shadow-light hover:shadow-heavy smooth-transition overflow-hidden">
-                  {/* Background glow on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-[0.02] smooth-transition"></div>
-
-                  {/* Step number badge - larger and more prominent */}
-                  <div className="absolute -top-8 -left-8 w-20 h-20 bg-black border-4 border-black rounded-full flex items-center justify-center shadow-heavy group-hover:scale-125 group-hover:-top-10 group-hover:-left-10 smooth-transition">
-                    <span className="text-white font-black text-4xl">{step.number}</span>
+                {/* Step number badge - bold circle */}
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  <div className="w-28 h-28 bg-black border-4 border-black rounded-full flex items-center justify-center shadow-heavy group-hover:scale-125 group-hover:shadow-2xl smooth-transition relative z-20">
+                    <span className="text-white font-black text-6xl">{step.number}</span>
                   </div>
+                </div>
 
-                  {/* Icon container - larger */}
-                  <div className="relative mb-8 mt-8">
-                    <div className="inline-block p-5 bg-black text-white group-hover:bg-gray-900 smooth-transition rounded-3xl">
-                      <IconComponent size={44} strokeWidth={2} />
+                {/* Content card - playful shape */}
+                <div className="flex-1 relative group/card">
+                  <div className="absolute -inset-3 bg-black rounded-3xl opacity-0 group-hover/card:opacity-10 blur-lg smooth-transition"></div>
+                  <div className="relative bg-white border-4 border-black rounded-3xl p-10 shadow-light hover:shadow-2xl smooth-transition overflow-hidden h-full flex flex-col justify-center">
+                    {/* Icon bubble - positioned at top right */}
+                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-black text-white rounded-full flex items-center justify-center group-hover/card:rotate-45 group-hover/card:scale-110 smooth-transition shadow-heavy">
+                      <IconComponent size={48} strokeWidth={1.5} />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-4xl md:text-5xl font-black text-black mb-4 pr-20 group-hover/card:translate-x-2 smooth-transition leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="font-bold text-gray-700 text-lg leading-relaxed max-w-sm">
+                      {step.description}
+                    </p>
+
+                    {/* Playful emoji accent */}
+                    <div className="text-6xl mt-4 opacity-20 group-hover/card:opacity-40 smooth-transition">
+                      {step.number === 1 ? '👛' : step.number === 2 ? '⚡' : step.number === 3 ? '📝' : '💰'}
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-3xl font-black text-black mb-4 group-hover:text-gray-800 smooth-transition leading-tight">
-                    {step.title}
-                  </h3>
-                  <p className="font-bold text-gray-700 text-base leading-relaxed mb-4">
-                    {step.description}
-                  </p>
-
-                  {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 h-2 bg-black w-0 group-hover:w-full smooth-transition origin-left"></div>
-
-                  {/* Arrow connector */}
-                  {step.number !== 4 && (
-                    <div className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 text-black opacity-30 group-hover:opacity-100 smooth-transition scale-125">
-                      <ArrowRight size={36} strokeWidth={2} />
-                    </div>
-                  )}
                 </div>
               </div>
             )
           })}
         </div>
 
-        <div className="flex justify-center pt-4 animate-fade-in-up" style={{ animationDelay: '320ms' }}>
+        {/* Bold playful CTA button */}
+        <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '400ms' }}>
           <a
             href="https://raydium.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-black text-white px-20 py-8 font-black text-2xl rounded-3xl border-4 border-black inline-block shadow-heavy hover-lift overflow-hidden"
+            className="group relative inline-block transform hover:scale-110 smooth-transition"
           >
-            <span className="relative z-10">START BUYING NOW</span>
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
+            {/* Outer rotating ring effect */}
+            <div className="absolute -inset-4 border-4 border-black rounded-full opacity-50 group-hover:opacity-100 group-hover:rotate-45 smooth-transition"></div>
+            
+            {/* Main button */}
+            <div className="relative bg-black text-white px-24 py-10 font-black text-3xl rounded-full border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition inline-block">
+              <span className="block group-hover:scale-110 smooth-transition origin-center">
+                BUY NOW
+              </span>
+              
+              {/* Animated underline */}
+              <div className="absolute -bottom-2 left-4 right-4 h-2 bg-white scale-x-0 group-hover:scale-x-100 smooth-transition origin-center rounded-full"></div>
+            </div>
           </a>
         </div>
       </div>
