@@ -103,9 +103,9 @@ export default function About() {
             <div className="absolute top-0 left-0 w-full md:w-1/3 animate-fade-in-up transform md:-rotate-3 md:hover:rotate-0 smooth-transition hover:z-20">
               <div className="group bg-black text-white rounded-3xl p-8 border-4 border-black shadow-heavy hover:shadow-2xl smooth-transition relative overflow-hidden">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 smooth-transition"></div>
-                <p className="text-6xl font-black mb-2 relative z-10">$5K</p>
-                <p className="font-black text-lg text-gray-300 relative z-10">Launch</p>
-                <p className="text-xs font-bold text-gray-400 relative z-10">Day 1</p>
+                <p className="text-6xl font-black mb-4 relative z-10">$5K</p>
+                <p className="font-black text-lg text-gray-300 relative z-10 whitespace-nowrap">Launch</p>
+                <p className="text-xs font-bold text-gray-400 relative z-10 mt-1">Day 1</p>
               </div>
             </div>
 
@@ -135,11 +135,11 @@ export default function About() {
         <div className="relative animate-fade-in-up stagger-item-4">
           <div className="space-y-6 relative z-10">
             {/* Playful header */}
-            <div className="space-y-4">
-              <h3 className="text-7xl md:text-8xl font-black leading-tight transform skew-y-2">
+            <div className="space-y-0">
+              <h3 className="text-7xl md:text-8xl font-black leading-none transform skew-y-2 mb-2">
                 THE
               </h3>
-              <h3 className="text-8xl md:text-9xl font-black leading-tight transform -skew-y-3 text-white/70">
+              <h3 className="text-8xl md:text-9xl font-black leading-none transform -skew-y-3 text-white/70 whitespace-nowrap">
                 RELAUNCH
               </h3>
             </div>
