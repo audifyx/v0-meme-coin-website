@@ -1,3 +1,4 @@
+import MaintenanceBanner from '@/components/MaintenanceBanner'
 import Header from '@/components/Header'
 import TickerBanner from '@/components/TickerBanner'
 import Hero from '@/components/Hero'
@@ -11,6 +12,7 @@ import Footer from '@/components/Footer'
 export default function Home() {
   return (
     <main className="bg-white">
+      <MaintenanceBanner />
       <TickerBanner />
       <Header />
       <Hero />

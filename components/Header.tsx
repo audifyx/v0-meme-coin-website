@@ -2,12 +2,31 @@
 
 import Link from 'next/link'
 import { Twitter, Copy, Check } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const CA = '6QxEWmorqGxGxRZsmNxghB9aZYNXZjudtovE5L4Qpump'
 
 export default function Header() {
   const [copied, setCopied] = useState(false)
+  const [price, setPrice] = useState<string | null>(null)
+  const [mc, setMc] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchPrice = async () => {
+      try {
+        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${CA}`)
+        const data = await res.json()
+        const pair = data?.pairs?.[0]
+        if (pair) {
+          setPrice(pair.priceUsd ? `$${parseFloat(pair.priceUsd).toFixed(8)}` : null)
+          setMc(pair.marketCap ? `$${(pair.marketCap / 1000).toFixed(1)}K` : null)
+        }
+      } catch {}
+    }
+    fetchPrice()
+    const interval = setInterval(fetchPrice, 30000)
+    return () => clearInterval(interval)
+  }, [])
 
   const copyCA = () => {
     navigator.clipboard.writeText(CA)
@@ -26,12 +45,35 @@ export default function Header() {
         </div>
       </div>
 
-      {/* CA Bar */}
+      {/* CA + Price Bar */}
       <div className="bg-black border-b border-white/10 py-3 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3">
-          <span className="text-white/40 text-xs font-bold tracking-widest">CA</span>
-          <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 w-full sm:w-auto">
-            <code className="font-mono text-xs text-white/80 truncate max-w-[200px] sm:max-w-none">{CA}</code>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Live Price & MC */}
+          <div className="flex items-center gap-6">
+            {price && (
+              <div className="flex items-center gap-2">
+                <span className="text-white/40 text-xs font-bold tracking-widest">PRICE</span>
+                <span className="text-white text-xs font-black">{price}</span>
+              </div>
+            )}
+            {mc && (
+              <div className="flex items-center gap-2">
+                <span className="text-white/40 text-xs font-bold tracking-widest">MC</span>
+                <span className="text-white text-xs font-black">{mc}</span>
+              </div>
+            )}
+            {!price && !mc && (
+              <span className="text-white/20 text-xs font-bold tracking-widest animate-pulse">LOADING PRICE...</span>
+            )}
+          </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block w-px h-4 bg-white/10"></div>
+
+          {/* CA */}
+          <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2">
+            <span className="text-white/40 text-xs font-bold tracking-widest">CA</span>
+            <code className="font-mono text-xs text-white/80 truncate max-w-[160px] sm:max-w-none">{CA}</code>
             <button onClick={copyCA} className="flex-shrink-0 flex items-center gap-1 bg-white text-black px-3 py-1 text-xs font-black hover:bg-gray-200 transition">
               {copied ? <><Check size={12} /> COPIED</> : <><Copy size={12} /> COPY</>}
             </button>
