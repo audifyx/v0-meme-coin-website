@@ -1,100 +1,164 @@
 'use client'
 
-import { useRef } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const characterImages = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_045616_551-xDCMa6HTmXrgDG0GKmMC7bWlhKf2yE.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051720_699-Q9rbse9bV1HQpj2X5e9NDTksyH276m.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051649_661-r2oJ5RTK3FSKw4kDGAWa1BUN3gpAvr.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051652_172-5eZjwJxN9dnmxiJlhSZTOqOuoCAnK2.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051710_094-8g0uzgMpxCxG5OoVMvYc57fqVIerFS.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051718_657-iba9yfKgseOvznEtwWkwdIyTB3nzsS.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051643_235-JyEEhFTHMnaXxt5D3VFCC1D78mH9Js.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051701_627-6qrnrYr5mTfeFjWA1M2CeorV0Xp76s.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051726_389-9Wvl7dIi5o25zynGuK48c7ELhVKvjU.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051657_735-LG9QKscCKhUwL6ic6ojxCuLigc0buA.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051654_374-v1v75wP0DOofcWDX1lZdG1IoHcmv03.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051722_988-Z61HLJZgHGxEsyF03JVovUqGpaY7wW.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051659_035-hpTsQgMEB7wb2A2AWw6ZX8nJVcScB7.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051700_463-G44LaOr2YzG6B10q73dQD9Cz9MIIgs.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051656_409-vuifEaZUUPKlZjj01NvZXCIG6l5hpl.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051713_895-FPezJR7FUOgJbShEHdQBjtfl7QEXEV.jpg',
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_045616_551-xDCMa6HTmXrgDG0GKmMC7bWlhKf2yE.jpg',
+    label: '$UNT #1',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051720_699-Q9rbse9bV1HQpj2X5e9NDTksyH276m.jpg',
+    label: '$UNT #2',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051649_661-r2oJ5RTK3FSKw4kDGAWa1BUN3gpAvr.jpg',
+    label: '$UNT #3',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051652_172-5eZjwJxN9dnmxiJlhSZTOqOuoCAnK2.jpg',
+    label: '$UNT #4',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051710_094-8g0uzgMpxCxG5OoVMvYc57fqVIerFS.jpg',
+    label: '$UNT #5',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051718_657-iba9yfKgseOvznEtwWkwdIyTB3nzsS.jpg',
+    label: '$UNT #6',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051643_235-JyEEhFTHMnaXxt5D3VFCC1D78mH9Js.jpg',
+    label: '$UNT #7',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051701_627-6qrnrYr5mTfeFjWA1M2CeorV0Xp76s.jpg',
+    label: '$UNT #8',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051726_389-9Wvl7dIi5o25zynGuK48c7ELhVKvjU.jpg',
+    label: '$UNT #9',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051657_735-LG9QKscCKhUwL6ic6ojxCuLigc0buA.jpg',
+    label: '$UNT #10',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051654_374-v1v75wP0DOofcWDX1lZdG1IoHcmv03.jpg',
+    label: '$UNT #11',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051722_988-Z61HLJZgHGxEsyF03JVovUqGpaY7wW.jpg',
+    label: '$UNT #12',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051659_035-hpTsQgMEB7wb2A2AWw6ZX8nJVcScB7.jpg',
+    label: '$UNT #13',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051700_463-G44LaOr2YzG6B10q73dQD9Cz9MIIgs.jpg',
+    label: '$UNT #14',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051656_409-vuifEaZUUPKlZjj01NvZXCIG6l5hpl.jpg',
+    label: '$UNT #15',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260427_051713_895-FPezJR7FUOgJbShEHdQBjtfl7QEXEV.jpg',
+    label: '$UNT #16',
+  },
 ]
 
 export default function MemeWall() {
-  const scrollContainer = useRef<HTMLDivElement>(null)
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainer.current) {
-      const scrollAmount = 400
-      if (direction === 'left') {
-        scrollContainer.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
-      } else {
-        scrollContainer.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-      }
-    }
-  }
-
   return (
-    <section id="memes" className="bg-white border-b-4 border-black relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 rounded-full opacity-[0.02] bg-black blur-3xl"></div>
+    <section
+      id="memes"
+      className="bg-white border-b-4 border-black"
+    >
+      {/* ── Section header ── */}
+      <div className="max-w-7xl mx-auto px-4 pt-20 pb-12 text-center">
+        <div className="inline-block border-4 border-black bg-black px-8 py-3 mb-6"
+          style={{ boxShadow: '6px 6px 0px #EF4444' }}>
+          <span className="text-white text-sm font-black tracking-[0.3em] uppercase">
+            Propaganda Wall
+          </span>
+        </div>
+        <h2 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight text-black">
+          MEME GALLERY
+        </h2>
+        <div className="mt-4 mx-auto h-2 w-32 bg-red-500"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-        <div className="mb-16">
-          <h2 className="text-6xl md:text-7xl font-black mb-4 animate-fade-in-down">
-            MEME GALLERY
-          </h2>
-          <div className="h-2 w-24 rounded-full bg-black animate-fade-in-up stagger-item-2"></div>
-        </div>
-
-        {/* Horizontal carousel container */}
-        <div className="relative group">
-          {/* Left button */}
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 rounded-full border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
-          >
-            <ChevronLeft size={28} />
-          </button>
-
-          {/* Scrollable carousel */}
-          <div
-            ref={scrollContainer}
-            className="flex gap-6 overflow-x-auto scroll-smooth px-20"
-            style={{ scrollBehavior: 'smooth' }}
-          >
-            {characterImages.map((image, index) => (
+      {/* ── Centered grid ── */}
+      <div className="max-w-7xl mx-auto px-4 pb-20">
+        <div
+          className="grid gap-6"
+          style={{
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            justifyItems: 'center',
+          }}
+        >
+          {characterImages.map((item, index) => (
+            <div
+              key={index}
+              className="w-full group cursor-pointer"
+              style={{ animationDelay: `${(index % 8) * 60}ms` }}
+            >
+              {/* Propaganda card */}
               <div
-                key={index}
-                className="flex-shrink-0 w-80 h-96 cursor-pointer group/card animate-fade-in-up hover-lift"
-                style={{ animationDelay: `${(index % 4) * 80}ms` }}
+                className="relative w-full overflow-hidden bg-black border-4 border-black"
+                style={{
+                  boxShadow: '8px 8px 0px #000000',
+                  transition: 'box-shadow 0.15s ease, transform 0.15s ease',
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLDivElement
+                  el.style.boxShadow = '12px 12px 0px #EF4444'
+                  el.style.transform = 'translate(-4px, -4px)'
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLDivElement
+                  el.style.boxShadow = '8px 8px 0px #000000'
+                  el.style.transform = 'translate(0, 0)'
+                }}
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100 rounded-3xl border-4 border-black shadow-light group-hover/card:shadow-heavy smooth-transition">
+                {/* Image */}
+                <div className="relative w-full aspect-square">
                   <Image
-                    src={image}
-                    alt={`$UNT Meme ${index + 1}`}
+                    src={item.src}
+                    alt={item.label}
                     fill
-                    className="object-cover group-hover/card:scale-110 smooth-transition rounded-2xl"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
-                  {/* Dark overlay on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-10 smooth-transition rounded-2xl"></div>
+                  {/* Red overlay on hover */}
+                  <div className="absolute inset-0 bg-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                </div>
+
+                {/* Label bar */}
+                <div className="bg-black border-t-4 border-black px-4 py-2 flex items-center justify-between">
+                  <span className="text-white font-black text-sm tracking-widest uppercase">
+                    {item.label}
+                  </span>
+                  <span className="text-red-500 font-black text-xs tracking-widest">
+                    #{String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          {/* Right button */}
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black text-white p-4 rounded-full border-4 border-black hover:bg-gray-900 smooth-transition hover-lift-subtle shadow-heavy opacity-0 group-hover:opacity-100 transition-opacity"
+        {/* ── Bottom stamp ── */}
+        <div className="mt-16 flex justify-center">
+          <div
+            className="border-4 border-black px-10 py-4 text-center"
+            style={{ boxShadow: '6px 6px 0px #EF4444' }}
           >
-            <ChevronRight size={28} />
-          </button>
+            <p className="text-black font-black text-xl uppercase tracking-[0.25em]">
+              $UNT — The People&apos;s Coin
+            </p>
+          </div>
         </div>
       </div>
     </section>
